@@ -2,13 +2,13 @@
 
 ## Diagnostic DynamicCache Wrapper
 
-`torbuquant.integration.hf.CompressedDynamicCache` patches a Transformers
+`turboquant.integration.hf.CompressedDynamicCache` patches a Transformers
 `DynamicCache` object. It stores compressed K/V rows internally, but it returns
 dense tensors to HuggingFace attention.
 
 ```python
 from transformers import DynamicCache
-from torbuquant.integration.hf import CompressedDynamicCache
+from turboquant.integration.hf import CompressedDynamicCache
 
 cache = DynamicCache()
 wrapper = CompressedDynamicCache(
@@ -120,7 +120,7 @@ Bypass means:
 
 ## Qwen Capture Helpers
 
-`torbuquant.integration.hf.capture` provides:
+`turboquant.integration.hf.capture` provides:
 
 - `capture_qwen_layer`
 - `capture_generated_tokens`
@@ -131,7 +131,7 @@ model weights and may use substantial GPU memory.
 
 ## Existing Diagnostic Adapter
 
-`HFDiagnosticCacheAdapter` in `torbuquant.integration.hf.qwen` converts a
+`HFDiagnosticCacheAdapter` in `turboquant.integration.hf.qwen` converts a
 `KVQuantConfig` into a `CompressedKVCache` and returns dense tensors for
 HuggingFace attention. It rejects production mode.
 

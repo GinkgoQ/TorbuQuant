@@ -1,16 +1,16 @@
 # Core API
 
-::: torbuquant.core.codebook
+::: turboquant.core.codebook
 
-::: torbuquant.core.rotation
+::: turboquant.core.rotation
 
-::: torbuquant.core.mse
+::: turboquant.core.mse
 
-::: torbuquant.core.qjl
+::: turboquant.core.qjl
 
-::: torbuquant.core.polar
+::: turboquant.core.polar
 
-::: torbuquant.core.outlier
+::: turboquant.core.outlier
 
-::: torbuquant.core.types
+::: turboquant.core.types
 

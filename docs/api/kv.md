@@ -1,22 +1,22 @@
 # KV Cache API
 
-::: torbuquant.kv.formats
+::: turboquant.kv.formats
 
-::: torbuquant.kv.layout
+::: turboquant.kv.layout
 
-::: torbuquant.kv.keys
+::: turboquant.kv.keys
 
-::: torbuquant.kv.values
+::: turboquant.kv.values
 
-::: torbuquant.kv.cache
+::: turboquant.kv.cache
 
-::: torbuquant.kv.store
+::: turboquant.kv.store
 
-::: torbuquant.kv.compressors
+::: turboquant.kv.compressors
 
-::: torbuquant.kv.memory
+::: turboquant.kv.memory
 
-::: torbuquant.kv.policy
+::: turboquant.kv.policy
 
-::: torbuquant.kv.recent
+::: turboquant.kv.recent
 

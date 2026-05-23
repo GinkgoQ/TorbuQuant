@@ -3,7 +3,7 @@
 This page is a module-oriented map. Use the API reference for signatures and
 docstrings; use this page to understand where code belongs.
 
-## `torbuquant.core`
+## `turboquant.core`
 
 Core math for rotations, codebooks, MSE quantization, QJL, and shared payload
 types.
@@ -17,7 +17,7 @@ Important files:
 - `polar.py`: product quantizer built from MSE and QJL.
 - `types.py`: shared named tuples and serializable specs.
 
-## `torbuquant.packing`
+## `turboquant.packing`
 
 Bitstream utilities for unsigned indices and sign bits. Used by MSE, QJL,
 values, recipe packing, and TQ page rows.
@@ -25,7 +25,7 @@ values, recipe packing, and TQ page rows.
 The packer uses little-endian bit order inside bytes. Tests cover 1/2/3/4/5-bit
 payloads.
 
-## `torbuquant.kv`
+## `turboquant.kv`
 
 KV cache format descriptions, key/value quantization, compressed cache owners,
 recent-window handling, policy construction, and byte reports.
@@ -37,7 +37,7 @@ Key distinction:
 - `compressors.py` contains compressor wrappers modeled after the reference
   implementation family.
 
-## `torbuquant.attention`
+## `turboquant.attention`
 
 Reference attention paths:
 
@@ -51,7 +51,7 @@ Reference attention paths:
 `reference.py` favors clarity and shape coverage. `hybrid.py` adds exact-token
 and compressed-token mixing for cache stores.
 
-## `torbuquant.triton`
+## `turboquant.triton`
 
 Contains both Triton kernels and PyTorch reference contracts for packed page
 behavior. Check each function docstring before using it for timing claims.
@@ -60,7 +60,7 @@ Files with live Triton JIT code and files with reference contracts live in the
 same package so callers can share imports. Documentation pages identify which is
 which.
 
-## `torbuquant.integration.common`
+## `turboquant.integration.common`
 
 Shared runtime config, backend capability detection, and integration report
 objects.
@@ -68,7 +68,7 @@ objects.
 This package is intentionally small. It is the bridge from user-facing config to
 cache policy and reporting.
 
-## `torbuquant.integration.hf`
+## `turboquant.integration.hf`
 
 HuggingFace capture and diagnostic cache wrapper code.
 
@@ -79,7 +79,7 @@ The HF path is primarily for:
 - DynamicCache lifecycle checks,
 - diagnostic compression reports.
 
-## `torbuquant.integration.vllm`
+## `turboquant.integration.vllm`
 
 vLLM-oriented recipe layouts, metadata JSON, calibration, page cache, runtime
 dispatch, registry, and verification helpers.
@@ -88,7 +88,7 @@ The vLLM package should remain independent from HuggingFace cache wrappers,
 except for verification code that intentionally uses HF as a diagnostic model
 loader.
 
-## `torbuquant.quality`
+## `turboquant.quality`
 
 Quality and evaluation utilities:
 
@@ -99,7 +99,7 @@ Quality and evaluation utilities:
 - trajectory drift metrics,
 - hardware-profile replay parsers.
 
-## `torbuquant.weights`
+## `turboquant.weights`
 
 Experimental weight compression helpers. These are separate from the KV-cache
 path.
@@ -107,6 +107,6 @@ path.
 These modules are documented because they are present in the package, but they
 are not evidence for KV-cache serving behavior.
 
-## `torbuquant.search`
+## `turboquant.search`
 
 Vector search helper code using compressed vector representations.

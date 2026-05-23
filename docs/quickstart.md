@@ -14,7 +14,7 @@ command output as the source of truth for your checkout.
 ```python
 import torch
 
-from torbuquant.core import RotationMode, build_rotation, TorbuquantMSE
+from turboquant.core import RotationMode, build_rotation, TorbuquantMSE
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 dim = 128
@@ -40,7 +40,7 @@ This is a tensor reconstruction check, not a model-quality check.
 ## 3. Build A KV Cache Policy
 
 ```python
-from torbuquant.integration import KVQuantConfig, policy_from_config
+from turboquant.integration import KVQuantConfig, policy_from_config
 
 config = KVQuantConfig(
     preset="k8_v4",
@@ -63,7 +63,7 @@ selection. It is used by cache owners and integration adapters.
 
 ```python
 from transformers import DynamicCache
-from torbuquant.integration.hf import CompressedDynamicCache
+from turboquant.integration.hf import CompressedDynamicCache
 
 cache = DynamicCache()
 wrapper = CompressedDynamicCache(cache, head_dim=128, bits=4)
@@ -94,7 +94,7 @@ energy for K/V projections, and writes metadata JSON.
 Inspect metadata before using recipe mode:
 
 ```python
-from torbuquant.integration.vllm import load_metadata
+from turboquant.integration.vllm import load_metadata
 
 metadata = load_metadata("turboquant_kv.json")
 print(metadata.recipe, metadata.head_dim, len(metadata.layers))

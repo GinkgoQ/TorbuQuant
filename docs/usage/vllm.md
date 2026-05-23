@@ -75,7 +75,7 @@ before page padding.
 ## Metadata Loading
 
 ```python
-from torbuquant.integration.vllm import load_metadata
+from turboquant.integration.vllm import load_metadata
 
 metadata = load_metadata("turboquant_kv.json")
 layer = metadata.get_layer("model.layers.0.self_attn")
@@ -102,7 +102,7 @@ Runtime metadata resolution also checks recipe and head-dimension match.
 ## Runtime Gate
 
 ```python
-from torbuquant.integration.vllm import validate_runtime_gate
+from turboquant.integration.vllm import validate_runtime_gate
 
 info = validate_runtime_gate(
     cache_dtype="turboquant35",
@@ -136,7 +136,7 @@ The INT8 prefill kernel is not yet present in this repository.
 ## Page Geometry
 
 ```python
-from torbuquant.integration.vllm import VLLMRuntimeConfig, build_page_geometry
+from turboquant.integration.vllm import VLLMRuntimeConfig, build_page_geometry
 
 config = VLLMRuntimeConfig(
     cache_dtype="tq4",
@@ -166,7 +166,7 @@ are ignored. A slot outside allocated pages raises.
 ```python
 import torch
 
-from torbuquant.integration.vllm import PackedPageCache, PageGeometry
+from turboquant.integration.vllm import PackedPageCache, PageGeometry
 
 geometry = PageGeometry(
     num_blocks=2,
@@ -185,9 +185,9 @@ cache = PackedPageCache(geometry=geometry, device=torch.device("cuda"))
 ```python
 import torch
 
-from torbuquant.core import RotationMode, build_rotation
-from torbuquant.core.codebook import get_codebook_tensors
-from torbuquant.triton import write_tq4_kv, decode_tq4_paged, tq_row_bytes
+from turboquant.core import RotationMode, build_rotation
+from turboquant.core.codebook import get_codebook_tensors
+from turboquant.triton import write_tq4_kv, decode_tq4_paged, tq_row_bytes
 
 dim = 128
 rotation = build_rotation(dim, RotationMode.RHT, torch.device("cuda"), seed=42)

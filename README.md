@@ -118,7 +118,7 @@ Important pages:
 
 Visual identity:
 
-- Browser favicon: `docs/assets/images/torbuquant-mark.svg`.
+- Browser favicon: `docs/assets/images/turboquant-mark.svg`.
 - Docs logo: `docs/assets/images/favicon.svg` from Ginkgo<span style="color:#79863c">Q</span>.
 - README banner: `docs/assets/images/banner.png`.
 - Primary accent: `#79863c`.
@@ -126,7 +126,7 @@ Visual identity:
 ## Repository Map
 
 ```text
-torbuquant/
+turboquant/
   core/          codebooks, rotations, MSE quantization, QJL
   packing/       bit packing and byte accounting helpers
   kv/            compressed cache formats and memory reports

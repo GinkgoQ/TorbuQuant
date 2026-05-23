@@ -1,6 +1,6 @@
 # Attention API
 
-::: torbuquant.attention.reference
+::: turboquant.attention.reference
 
-::: torbuquant.attention.hybrid
+::: turboquant.attention.hybrid
 

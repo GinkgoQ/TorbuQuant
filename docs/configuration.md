@@ -5,7 +5,7 @@ variables, and script arguments that are currently implemented.
 
 ## `KVQuantConfig`
 
-Defined in `torbuquant.integration.common.config`.
+Defined in `turboquant.integration.common.config`.
 
 | Field | Meaning |
 | --- | --- |
@@ -42,7 +42,7 @@ validation.
 
 ## vLLM Runtime Config
 
-`VLLMRuntimeConfig` lives in `torbuquant.integration.vllm.runtime`.
+`VLLMRuntimeConfig` lives in `turboquant.integration.vllm.runtime`.
 
 | Field | Meaning |
 | --- | --- |
@@ -59,7 +59,7 @@ validation.
 
 ## Recipe Config
 
-Recipe constants live in `torbuquant.integration.vllm.recipe`.
+Recipe constants live in `turboquant.integration.vllm.recipe`.
 
 | Name | Value |
 | --- | --- |

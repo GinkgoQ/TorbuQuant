@@ -1,6 +1,6 @@
 # Benchmark API
 
-::: torbuquant.bench.external
+::: turboquant.bench.external
 
-::: torbuquant.bench.profile
+::: turboquant.bench.profile
 

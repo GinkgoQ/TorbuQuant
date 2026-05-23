@@ -1,4 +1,4 @@
 # Packing API
 
-::: torbuquant.packing.bits
+::: turboquant.packing.bits
 

@@ -2,45 +2,45 @@
 
 ## Common
 
-::: torbuquant.integration.common.config
+::: turboquant.integration.common.config
 
-::: torbuquant.integration.common.backend
+::: turboquant.integration.common.backend
 
-::: torbuquant.integration.common.errors
+::: turboquant.integration.common.errors
 
-::: torbuquant.integration.common.report
+::: turboquant.integration.common.report
 
 ## HuggingFace
 
-::: torbuquant.integration.hf.dynamic_cache
+::: turboquant.integration.hf.dynamic_cache
 
-::: torbuquant.integration.hf.qwen
+::: turboquant.integration.hf.qwen
 
-::: torbuquant.integration.hf.capture
+::: turboquant.integration.hf.capture
 
-::: torbuquant.integration.hf.config
+::: turboquant.integration.hf.config
 
 ## vLLM
 
-::: torbuquant.integration.vllm.recipe
+::: turboquant.integration.vllm.recipe
 
-::: torbuquant.integration.vllm.vector
+::: turboquant.integration.vllm.vector
 
-::: torbuquant.integration.vllm.metadata
+::: turboquant.integration.vllm.metadata
 
-::: torbuquant.integration.vllm.calibration
+::: turboquant.integration.vllm.calibration
 
-::: torbuquant.integration.vllm.page_cache
+::: turboquant.integration.vllm.page_cache
 
-::: torbuquant.integration.vllm.cache_spec
+::: turboquant.integration.vllm.cache_spec
 
-::: torbuquant.integration.vllm.ops
+::: turboquant.integration.vllm.ops
 
-::: torbuquant.integration.vllm.registry
+::: turboquant.integration.vllm.registry
 
-::: torbuquant.integration.vllm.runtime
+::: turboquant.integration.vllm.runtime
 
-::: torbuquant.integration.vllm.verify
+::: turboquant.integration.vllm.verify
 
-::: torbuquant.integration.vllm.hooks
+::: turboquant.integration.vllm.hooks
 

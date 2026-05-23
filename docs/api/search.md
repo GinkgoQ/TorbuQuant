@@ -1,4 +1,4 @@
 # Search API
 
-::: torbuquant.search.functional
+::: turboquant.search.functional
 

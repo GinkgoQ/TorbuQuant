@@ -33,8 +33,8 @@ Create an environment before installing the package:
 === "conda"
 
     ```bash
-    conda create -n torbuquant python=3.10
-    conda activate torbuquant
+    conda create -n turboquant python=3.10
+    conda activate turboquant
     python -m pip install --upgrade pip
     ```
 

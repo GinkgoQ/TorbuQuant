@@ -1,16 +1,16 @@
 # Quality API
 
-::: torbuquant.quality.metrics
+::: turboquant.quality.metrics
 
-::: torbuquant.quality.kld
+::: turboquant.quality.kld
 
-::: torbuquant.quality.prompts
+::: turboquant.quality.prompts
 
-::: torbuquant.quality.retrieval
+::: turboquant.quality.retrieval
 
-::: torbuquant.quality.trajectory
+::: turboquant.quality.trajectory
 
-::: torbuquant.quality.composite
+::: turboquant.quality.composite
 
-::: torbuquant.quality.hw_replay
+::: turboquant.quality.hw_replay
 

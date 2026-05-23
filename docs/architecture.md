@@ -8,7 +8,7 @@ materializes dense tensors, and which path is valid for a given claim.
 ## Package Map
 
 ```text
-torbuquant/
+turboquant/
   core/          vector quantization math
   packing/       bit packing utilities
   kv/            cache formats, policy, byte reports, cache owners
@@ -93,13 +93,13 @@ The lifecycle maps to concrete repository components:
 
 ### `CompressedKVCache`
 
-Owns compressed sequence state in `torbuquant.kv.cache`. It manages dense recent
+Owns compressed sequence state in `turboquant.kv.cache`. It manages dense recent
 tokens, compressed blocks, boundary policy, sparse side storage, and memory
 reporting. Diagnostic dense reads are marked as such.
 
 ### `PackedPageCache`
 
-Owns uint8 page tensors in `torbuquant.integration.vllm.page_cache`.
+Owns uint8 page tensors in `turboquant.integration.vllm.page_cache`.
 Its shape is:
 
 ```text
@@ -144,7 +144,7 @@ vLLM's attention backend end to end.
 
 ## Byte Accounting
 
-`torbuquant.kv.memory.MemoryReport` and vLLM report helpers distinguish:
+`turboquant.kv.memory.MemoryReport` and vLLM report helpers distinguish:
 
 - dense KV bytes,
 - compressed K bytes,
@@ -158,7 +158,7 @@ Reports must name the baseline and the path used.
 
 ## Kernel Boundary
 
-The repository has two classes of code under `torbuquant.triton`:
+The repository has two classes of code under `turboquant.triton`:
 
 - actual Triton-oriented kernels and wrappers in `kernels.py`,
   `flash_attention_tq4_kv.py`, and `fused_paged_tq4_attention.py`;

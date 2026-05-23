@@ -1,8 +1,8 @@
 # Weights API
 
-::: torbuquant.weights.config
+::: turboquant.weights.config
 
-::: torbuquant.weights.core
+::: turboquant.weights.core
 
-::: torbuquant.weights.linear
+::: turboquant.weights.linear
 

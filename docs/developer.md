@@ -47,9 +47,9 @@ Before merging a runtime change:
 
 ## Adding A KV Format
 
-1. Add format description in `torbuquant.kv.formats`.
+1. Add format description in `turboquant.kv.formats`.
 2. Add packing/unpacking helpers if needed.
-3. Add byte accounting in `torbuquant.kv.memory`.
+3. Add byte accounting in `turboquant.kv.memory`.
 4. Add cache policy mapping.
 5. Add attention reference behavior.
 6. Add Triton path only after reference tests pass.

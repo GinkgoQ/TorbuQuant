@@ -7,7 +7,7 @@ inside scoring and accumulation.
 
 ## MSE Vector Quantization
 
-Implementation: `torbuquant.core.mse.TorbuquantMSE`.
+Implementation: `turboquant.core.mse.TorbuquantMSE`.
 
 1. Compute vector norms.
 2. Normalize vectors.
@@ -45,8 +45,8 @@ before multiplying by stored norms.
 
 ## QJL Product Quantization
 
-Implementation: `torbuquant.core.qjl.TorbuquantQJL` and
-`torbuquant.core.polar.TorbuquantProd`.
+Implementation: `turboquant.core.qjl.TorbuquantQJL` and
+`turboquant.core.polar.TorbuquantProd`.
 
 The product path combines MSE reconstruction with a sign sketch of the residual.
 It is used for inner-product experiments and recipe vector packing.
@@ -64,7 +64,7 @@ softmax changes the error model.
 
 ## Value Quantization
 
-Implementation: `torbuquant.kv.values`.
+Implementation: `turboquant.kv.values`.
 
 Values use group-wise integer quantization with per-group scale and zero
 metadata. V4 packs two values per byte; V2 packs four values per byte; V3 uses
@@ -85,7 +85,7 @@ The memory report includes payload, scale, and zero bytes separately.
 
 ## Direct-QK Diagnostic Attention
 
-Implementation: `torbuquant.attention.reference.direct_qk_attention`.
+Implementation: `turboquant.attention.reference.direct_qk_attention`.
 
 This path computes scores from compressed keys and can accumulate compressed
 values through `weighted_packed_v_accumulation`. It is a reference path used to
@@ -103,7 +103,7 @@ The helper `gqa_kv_heads` creates this mapping as a tensor.
 
 ## TQ Packed Page Update
 
-Implementation: `torbuquant.triton.tq4_update`.
+Implementation: `turboquant.triton.tq4_update`.
 
 The current writer:
 
@@ -140,7 +140,7 @@ and pages shaped:
 
 ## TQ Paged Decode Reference
 
-Implementation: `torbuquant.triton.tq4_decode`.
+Implementation: `turboquant.triton.tq4_decode`.
 
 The current paged decode reference:
 
@@ -151,7 +151,7 @@ The current paged decode reference:
 5. unpacks value rows,
 6. accumulates output.
 
-The file name is under `torbuquant.triton`, but this specific path is a PyTorch
+The file name is under `turboquant.triton`, but this specific path is a PyTorch
 contract implementation.
 
 ### Block Table Semantics
@@ -169,7 +169,7 @@ supports GQA and sliding-window restriction.
 
 ## Recipe Vector Packing
 
-Implementation: `torbuquant.integration.vllm.vector`.
+Implementation: `turboquant.integration.vllm.vector`.
 
 Recipe packing supports `turboquant25` and `turboquant35`:
 

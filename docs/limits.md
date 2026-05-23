@@ -20,7 +20,7 @@ quantization of rotated unit-vector coordinates. They do not prove:
 - HuggingFace cache wrappers reconstruct dense K/V for attention.
 - vLLM live backend registration is not wired end to end in this repository.
 - TQ packed page update/decode includes a PyTorch contract path; selected older
-  non-paged kernels exist under `torbuquant.triton.kernels`.
+  non-paged kernels exist under `turboquant.triton.kernels`.
 - Recipe update/decode Triton kernels are not present.
 - INT8-Q prefill is not present.
 - CUDA graph buffer ownership is not present.
