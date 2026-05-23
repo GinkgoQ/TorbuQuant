@@ -1,41 +1,101 @@
 [build-system]
-requires = ["setuptools>=61.0.0"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "turboquant"
+name = "TurboQuant"
 version = "0.1.1"
-description = "LLM KV cache compression and vector quantization on CUDA"
+description = "TurboQuant implementation"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = [
-    "torch",
-    "triton",
-    "numpy",
-    "scipy",
+
+keywords = [
+    "llm",
+    "quantization",
+    "kv-cache",
     "transformers",
+    "pytorch",
+    "attention",
+    "inference",
+    "memory-optimization",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "torch>=2.0.0",
 ]
 
 [project.optional-dependencies]
+triton = ["triton>=2.0.0"]
+llm = [
+    "transformers>=4.40.0",
+    "accelerate>=0.20.0",
+]
 dev = [
-    "pytest",
-    "black",
-    "isort",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "mypy>=1.0.0",
+    "ruff>=0.1.0",
 ]
-docs = [
-    "mkdocs-material",
-    "mkdocstrings[python]",
+all = [
+    "triton>=2.0.0",
+    "transformers>=4.40.0",
+    "accelerate>=0.20.0",
+    "datasets>=2.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/turboquant/turboquant"
+Documentation = "https://github.com/turboquant/turboquant#readme"
+Repository = "https://github.com/turboquant/turboquant"
+Issues = "https://github.com/turboquant/turboquant/issues"
 
 [tool.setuptools.packages.find]
-where = ["."]
 include = ["turboquant*"]
 
+[tool.setuptools.package-data]
+turboquant = ["py.typed"]
+
 [tool.pytest.ini_options]
-testpaths = ["tests"]
 pythonpath = ["."]
-norecursedirs = [
-    "other_implemnetations",
-    "paper",
-    "turboquant_python",
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
 ]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.coverage.run]
+source = ["turboquant"]
+omit = ["*/tests/*", "*/experiments/*"]
