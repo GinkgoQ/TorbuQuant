@@ -29,7 +29,7 @@ docs = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["torbuquant*"]
+include = ["turboquant*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
