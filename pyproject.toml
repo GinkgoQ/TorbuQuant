@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torbuquant"
+version = "0.1.0"
+description = "LLM KV cache compression and vector quantization on CUDA"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch",
+    "triton",
+    "numpy",
+    "scipy",
+    "transformers",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+]
+docs = [
+    "mkdocs-material",
+    "mkdocstrings[python]",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["torbuquant*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+norecursedirs = [
+    "other_implemnetations",
+    "paper",
+    "turboquant_python",
+]

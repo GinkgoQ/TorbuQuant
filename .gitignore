@@ -1,0 +1,84 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+turboquant_python
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+*.whl
+*.manifest
+*.spec
+
+# Test and coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+nosetests.xml
+pytestdebug.log
+
+# Static analysis / caches
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.mediapipe/
+
+# Editor/project settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Local working files
+*.log
+*.tmp
+*.temp
+*.swp
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# Environment / secret files
+.env
+.env.*
+secrets.toml
+*.pem
+*.key
+*.crt
+
+# Local build artifacts and exports
+*.zip
+*.tar.gz
+*.gz
+*.tgz
+*.egg
+
+# Ignore external or reference implementation copies if you do not want them in git
+other_implemnetations/
+
+# Project-specific generated/cache directories
+torbuquant.egg-info/
+
+# Local tool caches
+.agents/
+.codex/

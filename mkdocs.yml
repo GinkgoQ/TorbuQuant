@@ -1,0 +1,126 @@
+site_name: TorbuQuant
+site_description: LLM KV cache compression and vector quantization
+repo_url: https://github.com/GinkgoQ/TorbuQuant
+repo_name: TorbuQuant
+docs_dir: docs
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/favicon.svg
+  favicon: assets/images/torbuquant-mark.svg
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - announce.dismiss
+    - content.code.annotate
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+  font:
+    text: Inter
+    code: IBM Plex Mono
+
+extra_css:
+  - assets/stylesheets/theme.css
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["."]
+          options:
+            docstring_style: sphinx
+            members_order: source
+            show_source: true
+            show_signature_annotations: true
+            separate_signature: true
+            merge_init_into_class: true
+            inherited_members: false
+            filters:
+              - "!^_"
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - Install: install.md
+      - Quickstart: quickstart.md
+      - Usage: usage/index.md
+      - HuggingFace: usage/huggingface.md
+      - vLLM: usage/vllm.md
+      - vLLM FP8 vs TurboQuant: usage/vllm-fp8-turboquant.md
+      - Qwen A/B: usage/qwen-ab.md
+      - Configuration: configuration.md
+      - CLI: cli.md
+      - Formats: formats.md
+  - Method:
+      - Design: design.md
+      - Math: math.md
+      - Algorithms: algorithms.md
+      - Architecture: architecture.md
+      - Modules: modules.md
+      - Performance Notes: performance.md
+      - Limits: limits.md
+  - Development:
+      - Developer Guide: developer.md
+      - Contributing: contributing.md
+      - Troubleshooting: troubleshooting.md
+      - FAQ: faq.md
+      - GitHub Pages: github-pages.md
+      - vLLM Audit: vllm_reference_audit.md
+  - API:
+      - Overview: api/index.md
+      - Core: api/core.md
+      - Packing: api/packing.md
+      - KV Cache: api/kv.md
+      - Attention: api/attention.md
+      - Triton: api/triton.md
+      - Integrations: api/integration.md
+      - Quality: api/quality.md
+      - Benchmarks: api/bench.md
+      - Weights: api/weights.md
+      - Search: api/search.md

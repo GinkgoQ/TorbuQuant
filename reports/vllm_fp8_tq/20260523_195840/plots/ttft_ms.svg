@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420" role="img">
+<style>
+text{font-family:Inter,ui-sans-serif,system-ui,sans-serif;fill:#eceef8} .muted{fill:#a1a6bc} .axis{stroke:#2a2f43;stroke-width:1} .grid{stroke:#2a2f43;stroke-width:1;opacity:.55}
+</style>
+<rect width="100%" height="100%" rx="14" fill="#14161e"/>
+<text x="86" y="34" font-size="20" font-weight="700">TTFT by request rate</text>
+<text x="86" y="54" font-size="12" class="muted">milliseconds</text>
+<line x1="86" x2="956" y1="348.00" y2="348.00" class="grid"/>
+<text x="76" y="352.00" text-anchor="end" font-size="11" class="muted">0.0</text>
+<line x1="86" x2="956" y1="277.50" y2="277.50" class="grid"/>
+<text x="76" y="281.50" text-anchor="end" font-size="11" class="muted">572.9</text>
+<line x1="86" x2="956" y1="207.00" y2="207.00" class="grid"/>
+<text x="76" y="211.00" text-anchor="end" font-size="11" class="muted">1,145.8</text>
+<line x1="86" x2="956" y1="136.50" y2="136.50" class="grid"/>
+<text x="76" y="140.50" text-anchor="end" font-size="11" class="muted">1,718.7</text>
+<line x1="86" x2="956" y1="66.00" y2="66.00" class="grid"/>
+<text x="76" y="70.00" text-anchor="end" font-size="11" class="muted">2,291.6</text>
+<line x1="86" x2="86" y1="66" y2="348" class="axis"/>
+<line x1="86" x2="956" y1="348" y2="348" class="axis"/>
+<text x="231.00" y="384" text-anchor="middle" font-size="12" class="muted">1</text>
+<rect x="102.00" y="150.40" width="123.00" height="197.60" rx="4" fill="#79863c"/>
+<text x="163.50" y="167.40" text-anchor="middle" font-size="10" fill="#101114">1,605.8</text>
+<rect x="233.00" y="96.21" width="123.00" height="251.79" rx="4" fill="#a7b368"/>
+<text x="294.50" y="113.21" text-anchor="middle" font-size="10" fill="#101114">2,046.1</text>
+<text x="521.00" y="384" text-anchor="middle" font-size="12" class="muted">4</text>
+<rect x="392.00" y="335.85" width="123.00" height="12.15" rx="4" fill="#79863c"/>
+<rect x="523.00" y="282.28" width="123.00" height="65.72" rx="4" fill="#a7b368"/>
+<text x="584.50" y="299.28" text-anchor="middle" font-size="10" fill="#101114">534.1</text>
+<text x="811.00" y="384" text-anchor="middle" font-size="12" class="muted">inf</text>
+<rect x="682.00" y="342.96" width="123.00" height="5.04" rx="4" fill="#79863c"/>
+<rect x="813.00" y="336.71" width="123.00" height="11.29" rx="4" fill="#a7b368"/>
+<rect x="86" y="394" width="12" height="12" rx="2" fill="#79863c"/>
+<text x="104" y="404" font-size="12" class="muted">fp8</text>
+<rect x="216" y="394" width="12" height="12" rx="2" fill="#a7b368"/>
+<text x="234" y="404" font-size="12" class="muted">tq4</text>
+</svg>

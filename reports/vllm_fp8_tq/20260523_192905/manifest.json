@@ -1,0 +1,69 @@
+{
+  "run_id": "20260523_192905",
+  "config": {
+    "model": "Qwen/Qwen2.5-3B",
+    "context_len": 8192,
+    "output_len": 256,
+    "num_prompts": 1,
+    "request_rates": [
+      "1",
+      "4",
+      "inf"
+    ],
+    "max_concurrency": null,
+    "tensor_parallel_size": 1,
+    "gpu_memory_utilization": 0.9,
+    "dtype": "bfloat16",
+    "trust_remote_code": false,
+    "seed": 1234,
+    "host": "127.0.0.1",
+    "base_port": 8800,
+    "startup_timeout_s": 900.0,
+    "skip_cli_check": false,
+    "serve_extra_args": [],
+    "bench_extra_args": []
+  },
+  "variants": [
+    {
+      "label": "fp8",
+      "kv_cache_dtype": "fp8"
+    },
+    {
+      "label": "tq4",
+      "kv_cache_dtype": "turboquant_4bit_nc"
+    }
+  ],
+  "environment": {
+    "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "executable": "/home/arman/project/turboquant_v2/.venv/bin/python",
+    "packages": {
+      "torch": "2.11.0+cu130",
+      "triton": "3.6.0",
+      "transformers": "5.9.0",
+      "vllm": "0.21.0"
+    },
+    "gpu": {
+      "available": true,
+      "devices": [
+        {
+          "name": "NVIDIA GeForce RTX 4090 Laptop GPU",
+          "memory_total_mib": "16376",
+          "driver": "535.309.01"
+        }
+      ]
+    }
+  },
+  "vllm_cli_support": {
+    "returncode": 0,
+    "kv_cache_dtype_found": {
+      "fp8": true,
+      "turboquant_4bit_nc": true
+    },
+    "help_excerpt": "Arguments matching 'kv-cache-dtype':\n  --kv-cache-dtype {auto,bfloat16,float16,fp8,fp8_ds_mla,fp8_e4m3,fp8_e5m2,fp8_inc,fp8_per_token_head,int8_per_token_head,nvfp4,turboquant_3bit_nc,turboquant_4bit_nc,turboquant_k3v4_nc,turboquant_k8v4}\n                        Data type for kv cache storage. If \"auto\", will use\n                        model data type. CUDA 11.8+ supports fp8 (=fp8_e4m3)\n                        and fp8_e5m2. ROCm (AMD GPU) supports fp8 (=fp8_e4m3).\n                        Intel Gaudi (HPU) supports fp8 (using fp8_inc). Some\n                        models (namely DeepSeekV3.2) default to fp8, set to\n                        bfloat16 to use bfloat16 instead, this is an invalid\n                        option for models that do not default to fp8.\n                        (default: auto)\n  --kv-cache-dtype-skip-layers KV_CACHE_DTYPE_SKIP_LAYERS [KV_CACHE_DTYPE_SKIP_LAYERS ...]\n                        Layer patterns to skip KV cache quantization. Accepts\n                        layer indices (e.g., '0', '2', '4') or attention type\n                        names (e.g., 'sliding_window'). (default: [])\n\nWhen passing JSON CLI arguments, the following sets of arguments are equivalent:\n   --json-arg '{\"key1\": \"value1\", \"key2\": {\"key3\": \"value2\"}}'\n   --json-arg.key1 value1 --json-arg.key2.key3 value2\n\nAdditionally, list elements can be passed individually using +:\n   --json-arg '{\"key4\": [\"value3\", \"value4\", \"value5\"]}'\n   --json-arg.key4+ value3 --json-arg.key4+='value4,value5'\n\n"
+  },
+  "sources": {
+    "vllm_bench_serve_docs": "https://docs.vllm.ai/en/latest/cli/bench/serve/",
+    "vllm_turboquant_docs": "https://docs.vllm.ai/en/latest/api/vllm/model_executor/layers/quantization/turboquant/"
+  }
+}

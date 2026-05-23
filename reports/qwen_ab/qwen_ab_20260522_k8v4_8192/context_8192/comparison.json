@@ -1,0 +1,11 @@
+{
+  "same_prompt_digest": true,
+  "raw_new_output_match": true,
+  "token_match_ratio": 1.0,
+  "peak_cuda_allocated_delta_bytes": -169869312,
+  "peak_cuda_allocated_ratio_tq_over_hf": 0.9766565185301408,
+  "runtime_delta_s": 4.765432841995789,
+  "runtime_ratio_tq_over_hf": 4.647309702505164,
+  "throughput_ratio_tq_over_hf": 0.2151782566720146,
+  "cache_storage_ratio_dense_over_tq": 2.276970458550249
+}

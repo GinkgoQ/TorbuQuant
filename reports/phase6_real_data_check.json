@@ -1,0 +1,353 @@
+{
+  "phase": 6,
+  "device": "cuda",
+  "python": "3.10.12",
+  "torch": "2.9.1+cu128",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+  "seed": 1234,
+  "activation_meta": {
+    "model_id": "Qwen/Qwen2.5-3B",
+    "layer_idx": 0,
+    "texts": 4,
+    "tokens": 486,
+    "num_q_heads": 16,
+    "num_kv_heads": 2,
+    "head_dim": 128,
+    "vectors": 972
+  },
+  "kv_tokens": 128,
+  "query_tokens": 1,
+  "num_q_heads": 16,
+  "num_kv_heads": 2,
+  "head_dim": 128,
+  "gates": {
+    "k16v4_output_matches_reference": true,
+    "k8v4_output_matches_reference": true,
+    "k4v4_output_matches_reference": true,
+    "k16v4_score_matches_reference": true,
+    "k8v4_score_matches_reference": true,
+    "k4v4_uses_fused_kernel": true
+  },
+  "cases": [
+    {
+      "preset": "k16_v4",
+      "kernel_report": {
+        "name": "decode_k16v4",
+        "k_format": "K16",
+        "v_format": "V4",
+        "q_len": 1,
+        "kv_len": 128,
+        "num_q_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "counters": {
+          "score_calls": 1,
+          "v_accumulation_calls": 1,
+          "fused_calls": 0,
+          "fallback_calls": 0
+        }
+      },
+      "cache_report": {
+        "head_dim": 128,
+        "num_kv_heads": 2,
+        "layer_idx": 0,
+        "seq_len": 128,
+        "compressed_tokens": 128,
+        "recent_tokens": 0,
+        "layer_preserved": false,
+        "layer_dense_tokens": 0,
+        "k_format": "K16",
+        "v_format": "V4",
+        "policy": {
+          "preset": "k16_v4",
+          "k_format": "K16",
+          "v_format": "V4",
+          "recent_window": 0,
+          "boundary_tokens": 0,
+          "preserve_first_layers": 0,
+          "preserve_last_layers": 0,
+          "sparse_v": false,
+          "allow_v3": false,
+          "allow_k_low_bits": false,
+          "fallback_mode": null,
+          "fallback_count": 0,
+          "reason": "preset"
+        },
+        "k4_metadata": null,
+        "recent_window": {
+          "capacity": 0,
+          "size": 0,
+          "total_written": 0,
+          "bytes": 0
+        },
+        "boundary": {
+          "tokens": 0,
+          "stored_tokens": 0
+        },
+        "blocks": [
+          {
+            "start": 0,
+            "length": 128,
+            "k_format": "K16",
+            "v_format": "V4",
+            "diagnostic_label": null,
+            "compressed_k_bytes": 131072,
+            "scales_bytes": 2048,
+            "zeros_bytes": 2048,
+            "norms_bytes": 0,
+            "compressed_v_bytes": 16384
+          }
+        ],
+        "outliers": {
+          "bytes": 0,
+          "num_indices": 0
+        },
+        "fallback_events": []
+      },
+      "memory": {
+        "dense_kv_bytes": 262144,
+        "compressed_k_bytes": 131072,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 2048,
+        "zeros_bytes": 2048,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 933,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 152485,
+        "measured_total_bytes": 152485,
+        "compression_ratio": 1.7191461455225103,
+        "formula_compression_ratio": Infinity
+      },
+      "score_max_abs": 9.1552734375e-05,
+      "score_rmse": 1.67427660926478e-05,
+      "output_max_abs": 4.589557647705078e-06,
+      "output_rmse": 6.733767463629192e-07
+    },
+    {
+      "preset": "k8_v4",
+      "kernel_report": {
+        "name": "decode_k8v4",
+        "k_format": "K8",
+        "v_format": "V4",
+        "q_len": 1,
+        "kv_len": 128,
+        "num_q_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "counters": {
+          "score_calls": 1,
+          "v_accumulation_calls": 1,
+          "fused_calls": 0,
+          "fallback_calls": 0
+        }
+      },
+      "cache_report": {
+        "head_dim": 128,
+        "num_kv_heads": 2,
+        "layer_idx": 0,
+        "seq_len": 128,
+        "compressed_tokens": 128,
+        "recent_tokens": 0,
+        "layer_preserved": false,
+        "layer_dense_tokens": 0,
+        "k_format": "K8",
+        "v_format": "V4",
+        "policy": {
+          "preset": "k8_v4",
+          "k_format": "K8",
+          "v_format": "V4",
+          "recent_window": 0,
+          "boundary_tokens": 0,
+          "preserve_first_layers": 0,
+          "preserve_last_layers": 0,
+          "sparse_v": false,
+          "allow_v3": false,
+          "allow_k_low_bits": false,
+          "fallback_mode": null,
+          "fallback_count": 0,
+          "reason": "preset"
+        },
+        "k4_metadata": null,
+        "recent_window": {
+          "capacity": 0,
+          "size": 0,
+          "total_written": 0,
+          "bytes": 0
+        },
+        "boundary": {
+          "tokens": 0,
+          "stored_tokens": 0
+        },
+        "blocks": [
+          {
+            "start": 0,
+            "length": 128,
+            "k_format": "K8",
+            "v_format": "V4",
+            "diagnostic_label": null,
+            "compressed_k_bytes": 32768,
+            "scales_bytes": 2048,
+            "zeros_bytes": 2048,
+            "norms_bytes": 0,
+            "compressed_v_bytes": 16384
+          }
+        ],
+        "outliers": {
+          "bytes": 0,
+          "num_indices": 0
+        },
+        "fallback_events": []
+      },
+      "memory": {
+        "dense_kv_bytes": 262144,
+        "compressed_k_bytes": 32768,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 4096,
+        "zeros_bytes": 4096,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 928,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 58272,
+        "measured_total_bytes": 58272,
+        "compression_ratio": 4.498627127951675,
+        "formula_compression_ratio": Infinity
+      },
+      "score_max_abs": 0.000152587890625,
+      "score_rmse": 1.9249140677857213e-05,
+      "output_max_abs": 7.10412859916687e-06,
+      "output_rmse": 9.458780709792336e-07
+    },
+    {
+      "preset": "k4_v4",
+      "kernel_report": {
+        "name": "fused_decode_k4v4",
+        "k_format": "K4",
+        "v_format": "V4",
+        "q_len": 1,
+        "kv_len": 128,
+        "num_q_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 128,
+        "counters": {
+          "score_calls": 0,
+          "v_accumulation_calls": 0,
+          "fused_calls": 1,
+          "fallback_calls": 0
+        }
+      },
+      "cache_report": {
+        "head_dim": 128,
+        "num_kv_heads": 2,
+        "layer_idx": 0,
+        "seq_len": 128,
+        "compressed_tokens": 128,
+        "recent_tokens": 0,
+        "layer_preserved": false,
+        "layer_dense_tokens": 0,
+        "k_format": "K4",
+        "v_format": "V4",
+        "policy": {
+          "preset": "k4_v4",
+          "k_format": "K4",
+          "v_format": "V4",
+          "recent_window": 0,
+          "boundary_tokens": 0,
+          "preserve_first_layers": 0,
+          "preserve_last_layers": 0,
+          "sparse_v": false,
+          "allow_v3": false,
+          "allow_k_low_bits": true,
+          "fallback_mode": null,
+          "fallback_count": 0,
+          "reason": "preset"
+        },
+        "k4_metadata": {
+          "bits": 4,
+          "dim": 128,
+          "centroids_bytes": 124,
+          "rotation_bytes": 1024,
+          "rotation": {
+            "kind": "rht",
+            "dim": 128,
+            "seed": 42,
+            "dtype": "float32",
+            "device_type": "cuda",
+            "pad_dim": 128
+          }
+        },
+        "recent_window": {
+          "capacity": 0,
+          "size": 0,
+          "total_written": 0,
+          "bytes": 0
+        },
+        "boundary": {
+          "tokens": 0,
+          "stored_tokens": 0
+        },
+        "blocks": [
+          {
+            "start": 0,
+            "length": 128,
+            "k_format": "K4",
+            "v_format": "V4",
+            "diagnostic_label": null,
+            "compressed_k_bytes": 16384,
+            "scales_bytes": 2048,
+            "zeros_bytes": 2048,
+            "norms_bytes": 512,
+            "compressed_v_bytes": 16384
+          }
+        ],
+        "outliers": {
+          "bytes": 0,
+          "num_indices": 0
+        },
+        "fallback_events": []
+      },
+      "memory": {
+        "dense_kv_bytes": 262144,
+        "compressed_k_bytes": 16384,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 2048,
+        "zeros_bytes": 2048,
+        "norms_bytes": 512,
+        "centroids_bytes": 124,
+        "rotation_bytes": 1024,
+        "metadata_bytes": 1108,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 39632,
+        "measured_total_bytes": 39632,
+        "compression_ratio": 6.614452967299152,
+        "formula_compression_ratio": Infinity
+      },
+      "score_max_abs": null,
+      "score_rmse": null,
+      "output_max_abs": 1.9758939743041992e-05,
+      "output_rmse": 2.4063774617388844e-06
+    }
+  ]
+}

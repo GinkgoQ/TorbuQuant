@@ -1,0 +1,962 @@
+{
+  "phase": "validation",
+  "device": "cuda",
+  "python": "3.10.12",
+  "torch": "2.9.1+cu128",
+  "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+  "seed": 1234,
+  "model_id": "Qwen/Qwen2.5-3B",
+  "capture": {
+    "meta": {
+      "model_id": "Qwen/Qwen2.5-3B",
+      "layer_idx": 0,
+      "texts": 1,
+      "tokens": 1025,
+      "num_q_heads": 16,
+      "num_kv_heads": 2,
+      "head_dim": 128,
+      "dtype": "torch.float16",
+      "device": "cuda"
+    },
+    "shapes": {
+      "q": [
+        1,
+        1025,
+        16,
+        128
+      ],
+      "k": [
+        1,
+        1025,
+        2,
+        128
+      ],
+      "v": [
+        1,
+        1025,
+        2,
+        128
+      ],
+      "logits": [
+        1,
+        1025,
+        151936
+      ],
+      "attention_mask": [
+        1,
+        1025
+      ]
+    }
+  },
+  "capabilities": {
+    "hf": {
+      "backend": "hf",
+      "available": true,
+      "reason": null,
+      "policy_capability": {
+        "name": "hf",
+        "fused_decode": true,
+        "paged_cache": false,
+        "supports_v3": false,
+        "supports_sparse_v": false
+      },
+      "versions": {
+        "python": "3.10.12",
+        "torch": "2.9.1+cu128",
+        "cuda_available": true,
+        "cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "triton": "3.5.1",
+        "transformers": "5.8.1",
+        "vllm": "0.15.1"
+      }
+    },
+    "vllm": {
+      "backend": "vllm",
+      "available": true,
+      "reason": null,
+      "policy_capability": {
+        "name": "vllm",
+        "fused_decode": true,
+        "paged_cache": true,
+        "supports_v3": false,
+        "supports_sparse_v": false
+      },
+      "versions": {
+        "python": "3.10.12",
+        "torch": "2.9.1+cu128",
+        "cuda_available": true,
+        "cuda": "12.8",
+        "gpu": "NVIDIA GeForce RTX 4090 Laptop GPU",
+        "triton": "3.5.1",
+        "transformers": "5.8.1",
+        "vllm": "0.15.1"
+      }
+    }
+  },
+  "contexts_requested": [
+    128,
+    512,
+    1024
+  ],
+  "contexts_measured": [
+    128,
+    512,
+    1024
+  ],
+  "presets": [
+    "k16_v4",
+    "k8_v4",
+    "k4_v4"
+  ],
+  "measurement": {
+    "warmup": 3,
+    "repeats": 10,
+    "memory_budget_gib": 4.0,
+    "baseline": "PyTorch SDPA dense KV for timing; dense_attention for score/weight reference"
+  },
+  "gates": {
+    "memory_reduction_all_rows": true,
+    "quality_output_cosine_all_rows": false,
+    "has_quality_preserving_row": true,
+    "has_quality_preserving_speedup_row": true,
+    "large_context_measured": true,
+    "has_speedup_row": true
+  },
+  "selection": {
+    "quality_rows": [
+      {
+        "preset": "k16_v4",
+        "kv_len": 128
+      },
+      {
+        "preset": "k8_v4",
+        "kv_len": 128
+      },
+      {
+        "preset": "k16_v4",
+        "kv_len": 512
+      },
+      {
+        "preset": "k8_v4",
+        "kv_len": 512
+      },
+      {
+        "preset": "k16_v4",
+        "kv_len": 1024
+      },
+      {
+        "preset": "k8_v4",
+        "kv_len": 1024
+      }
+    ],
+    "speed_quality_rows": [
+      {
+        "preset": "k8_v4",
+        "kv_len": 128
+      },
+      {
+        "preset": "k16_v4",
+        "kv_len": 512
+      },
+      {
+        "preset": "k8_v4",
+        "kv_len": 512
+      },
+      {
+        "preset": "k16_v4",
+        "kv_len": 1024
+      },
+      {
+        "preset": "k8_v4",
+        "kv_len": 1024
+      }
+    ],
+    "top_speed_quality_row": {
+      "preset": "k8_v4",
+      "kv_len": 128,
+      "speed_ratio_vs_dense_sdpa": 1.8405878384792833,
+      "compression_ratio": 2.2493135639758375,
+      "output_cosine": 0.9950751066207886
+    },
+    "max_memory_row": {
+      "preset": "k4_v4",
+      "kv_len": 1024,
+      "compression_ratio": 3.480496030165432,
+      "output_cosine": 0.7640873193740845
+    },
+    "max_quality_row": {
+      "preset": "k16_v4",
+      "kv_len": 1024,
+      "compression_ratio": 1.5217330099975763,
+      "output_cosine": 0.9994789361953735
+    }
+  },
+  "rows": [
+    {
+      "preset": "k16_v4",
+      "kv_len": 128,
+      "memory": {
+        "dense_kv_bytes": 131072,
+        "compressed_k_bytes": 65536,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 2048,
+        "zeros_bytes": 2048,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 932,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 86948,
+        "measured_total_bytes": 86948,
+        "compression_ratio": 1.507475732621797,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 679.28125
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 6322811,
+        "gain": 1.5074756145477295
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.059315651655197144,
+          "rmse": 0.009599141776561737,
+          "cosine": 0.998233437538147
+        },
+        "attention_kl_vs_dense": 0.0,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.15896960198879242,
+          "median_ms": 0.15832000225782394,
+          "variance_ms2": 0.00010344532212342254,
+          "min_ms": 0.14847999811172485,
+          "max_ms": 0.1812479943037033
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.18489919751882553,
+          "median_ms": 0.18431999534368515,
+          "variance_ms2": 6.0072966822481236e-05,
+          "min_ms": 0.17612800002098083,
+          "max_ms": 0.20054399967193604
+        },
+        "speed_ratio_vs_dense_sdpa": 0.858941006170376,
+        "kernel": {
+          "name": "decode_k16v4",
+          "k_format": "K16",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 128,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 1.490861177444458e-05,
+          "rmse": 1.6197885770452558e-06,
+          "cosine": 1.0000001192092896
+        }
+      }
+    },
+    {
+      "preset": "k8_v4",
+      "kv_len": 128,
+      "memory": {
+        "dense_kv_bytes": 131072,
+        "compressed_k_bytes": 32768,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 4096,
+        "zeros_bytes": 4096,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 928,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 58272,
+        "measured_total_bytes": 58272,
+        "compression_ratio": 2.2493135639758375,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 455.25
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 9434304,
+        "gain": 2.2493133544921875
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.10058018565177917,
+          "rmse": 0.015973929315805435,
+          "cosine": 0.9950751066207886
+        },
+        "attention_kl_vs_dense": 0.2217101752758026,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.15896960198879242,
+          "median_ms": 0.15832000225782394,
+          "variance_ms2": 0.00010344532212342254,
+          "min_ms": 0.14847999811172485,
+          "max_ms": 0.1812479943037033
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.08756799921393395,
+          "median_ms": 0.08601599931716919,
+          "variance_ms2": 2.505414409114547e-05,
+          "min_ms": 0.08432000130414963,
+          "max_ms": 0.1013759970664978
+        },
+        "speed_ratio_vs_dense_sdpa": 1.8405878384792833,
+        "kernel": {
+          "name": "decode_k8v4",
+          "k_format": "K8",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 128,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 1.2278556823730469e-05,
+          "rmse": 8.999852525448659e-07,
+          "cosine": 1.0000001192092896
+        }
+      }
+    },
+    {
+      "preset": "k4_v4",
+      "kv_len": 128,
+      "memory": {
+        "dense_kv_bytes": 131072,
+        "compressed_k_bytes": 16384,
+        "compressed_v_bytes": 16384,
+        "scales_bytes": 2048,
+        "zeros_bytes": 2048,
+        "norms_bytes": 512,
+        "centroids_bytes": 124,
+        "rotation_bytes": 1024,
+        "metadata_bytes": 1108,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 39632,
+        "measured_total_bytes": 39632,
+        "compression_ratio": 3.307226483649576,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 309.625
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 13871513,
+        "gain": 3.3072264194488525
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.6765109300613403,
+          "rmse": 0.09360960870981216,
+          "cosine": 0.8370189666748047
+        },
+        "attention_kl_vs_dense": 14.655580520629883,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.15896960198879242,
+          "median_ms": 0.15832000225782394,
+          "variance_ms2": 0.00010344532212342254,
+          "min_ms": 0.14847999811172485,
+          "max_ms": 0.1812479943037033
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.3352319985628128,
+          "median_ms": 0.30931200087070465,
+          "variance_ms2": 0.005678585329701975,
+          "min_ms": 0.30003198981285095,
+          "max_ms": 0.5475839972496033
+        },
+        "speed_ratio_vs_dense_sdpa": 0.5118456503858808,
+        "kernel": {
+          "name": "fused_decode_k4v4",
+          "k_format": "K4",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 128,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 0,
+            "v_accumulation_calls": 0,
+            "fused_calls": 13,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 2.0369887351989746e-05,
+          "rmse": 1.6549799966014689e-06,
+          "cosine": 1.0
+        }
+      }
+    },
+    {
+      "preset": "k16_v4",
+      "kv_len": 512,
+      "memory": {
+        "dense_kv_bytes": 524288,
+        "compressed_k_bytes": 262144,
+        "compressed_v_bytes": 65536,
+        "scales_bytes": 8192,
+        "zeros_bytes": 8192,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 933,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 344997,
+        "measured_total_bytes": 344997,
+        "compression_ratio": 1.519688577002119,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 673.822265625
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 6374035,
+        "gain": 1.519688367843628
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.027398616075515747,
+          "rmse": 0.004999611061066389,
+          "cosine": 0.9992561936378479
+        },
+        "attention_kl_vs_dense": 2.839951775968075e-07,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13613439798355104,
+          "median_ms": 0.13422399759292603,
+          "variance_ms2": 3.9837412632041476e-05,
+          "min_ms": 0.12902399897575378,
+          "max_ms": 0.14847999811172485
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.0798303984105587,
+          "median_ms": 0.0790719985961914,
+          "variance_ms2": 6.617098879885263e-06,
+          "min_ms": 0.07680000364780426,
+          "max_ms": 0.08601599931716919
+        },
+        "speed_ratio_vs_dense_sdpa": 1.6974908940696876,
+        "kernel": {
+          "name": "decode_k16v4",
+          "k_format": "K16",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 512,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 4.731118679046631e-06,
+          "rmse": 6.271805546020914e-07,
+          "cosine": 1.0
+        }
+      }
+    },
+    {
+      "preset": "k8_v4",
+      "kv_len": 512,
+      "memory": {
+        "dense_kv_bytes": 524288,
+        "compressed_k_bytes": 131072,
+        "compressed_v_bytes": 65536,
+        "scales_bytes": 16384,
+        "zeros_bytes": 16384,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 929,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 230305,
+        "measured_total_bytes": 230305,
+        "compression_ratio": 2.2764942141942206,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 449.814453125
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 9548308,
+        "gain": 2.276494026184082
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.04834352433681488,
+          "rmse": 0.007851864211261272,
+          "cosine": 0.9981977939605713
+        },
+        "attention_kl_vs_dense": 0.17618829011917114,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13613439798355104,
+          "median_ms": 0.13422399759292603,
+          "variance_ms2": 3.9837412632041476e-05,
+          "min_ms": 0.12902399897575378,
+          "max_ms": 0.14847999811172485
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.08351679891347885,
+          "median_ms": 0.0828159973025322,
+          "variance_ms2": 9.741994452780763e-06,
+          "min_ms": 0.08079999685287476,
+          "max_ms": 0.08940800279378891
+        },
+        "speed_ratio_vs_dense_sdpa": 1.6207496373266759,
+        "kernel": {
+          "name": "decode_k8v4",
+          "k_format": "K8",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 512,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 8.717179298400879e-06,
+          "rmse": 8.218653988478763e-07,
+          "cosine": 0.9999998807907104
+        }
+      }
+    },
+    {
+      "preset": "k4_v4",
+      "kv_len": 512,
+      "memory": {
+        "dense_kv_bytes": 524288,
+        "compressed_k_bytes": 65536,
+        "compressed_v_bytes": 65536,
+        "scales_bytes": 8192,
+        "zeros_bytes": 8192,
+        "norms_bytes": 2048,
+        "centroids_bytes": 124,
+        "rotation_bytes": 1024,
+        "metadata_bytes": 1109,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 151761,
+        "measured_total_bytes": 151761,
+        "compression_ratio": 3.4546952115497396,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 296.408203125
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 14490041,
+        "gain": 3.454694986343384
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.6879171133041382,
+          "rmse": 0.0882997140288353,
+          "cosine": 0.8313343524932861
+        },
+        "attention_kl_vs_dense": 20.363134384155273,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13613439798355104,
+          "median_ms": 0.13422399759292603,
+          "variance_ms2": 3.9837412632041476e-05,
+          "min_ms": 0.12902399897575378,
+          "max_ms": 0.14847999811172485
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.3224959999322891,
+          "median_ms": 0.31940799951553345,
+          "variance_ms2": 0.000123865938550506,
+          "min_ms": 0.3112959861755371,
+          "max_ms": 0.34406399726867676
+        },
+        "speed_ratio_vs_dense_sdpa": 0.42022741382968537,
+        "kernel": {
+          "name": "fused_decode_k4v4",
+          "k_format": "K4",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 512,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 0,
+            "v_accumulation_calls": 0,
+            "fused_calls": 13,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 2.3752450942993164e-05,
+          "rmse": 2.102160124195507e-06,
+          "cosine": 0.9999999403953552
+        }
+      }
+    },
+    {
+      "preset": "k16_v4",
+      "kv_len": 1024,
+      "memory": {
+        "dense_kv_bytes": 1048576,
+        "compressed_k_bytes": 524288,
+        "compressed_v_bytes": 131072,
+        "scales_bytes": 16384,
+        "zeros_bytes": 16384,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 939,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 689067,
+        "measured_total_bytes": 689067,
+        "compression_ratio": 1.5217330099975763,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 672.9169921875
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 6382610,
+        "gain": 1.5217328071594238
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.02290971204638481,
+          "rmse": 0.004023635294288397,
+          "cosine": 0.9994789361953735
+        },
+        "attention_kl_vs_dense": 0.0,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13253760039806367,
+          "median_ms": 0.13035199791193008,
+          "variance_ms2": 3.0495158032442206e-05,
+          "min_ms": 0.1281919926404953,
+          "max_ms": 0.14336000382900238
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.08047039955854415,
+          "median_ms": 0.0796320028603077,
+          "variance_ms2": 6.460997868456491e-06,
+          "min_ms": 0.0785600021481514,
+          "max_ms": 0.08579199761152267
+        },
+        "speed_ratio_vs_dense_sdpa": 1.6369297924177115,
+        "kernel": {
+          "name": "decode_k16v4",
+          "k_format": "K16",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 1024,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 7.927417755126953e-06,
+          "rmse": 8.294028930322384e-07,
+          "cosine": 1.0000001192092896
+        }
+      }
+    },
+    {
+      "preset": "k8_v4",
+      "kv_len": 1024,
+      "memory": {
+        "dense_kv_bytes": 1048576,
+        "compressed_k_bytes": 262144,
+        "compressed_v_bytes": 131072,
+        "scales_bytes": 32768,
+        "zeros_bytes": 32768,
+        "norms_bytes": 0,
+        "centroids_bytes": 0,
+        "rotation_bytes": 0,
+        "metadata_bytes": 935,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 459687,
+        "measured_total_bytes": 459687,
+        "compression_ratio": 2.2810651595542186,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 448.9130859375
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 9567480,
+        "gain": 2.281064987182617
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.11377497762441635,
+          "rmse": 0.009613332338631153,
+          "cosine": 0.9970307350158691
+        },
+        "attention_kl_vs_dense": 0.3463556468486786,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13253760039806367,
+          "median_ms": 0.13035199791193008,
+          "variance_ms2": 3.0495158032442206e-05,
+          "min_ms": 0.1281919926404953,
+          "max_ms": 0.14336000382900238
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.0850399985909462,
+          "median_ms": 0.08435199782252312,
+          "variance_ms2": 7.095699206158576e-06,
+          "min_ms": 0.08294399827718735,
+          "max_ms": 0.09216000139713287
+        },
+        "speed_ratio_vs_dense_sdpa": 1.5453338542874957,
+        "kernel": {
+          "name": "decode_k8v4",
+          "k_format": "K8",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 1024,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 13,
+            "v_accumulation_calls": 13,
+            "fused_calls": 0,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 9.179115295410156e-06,
+          "rmse": 8.250996756942186e-07,
+          "cosine": 1.0000001192092896
+        }
+      }
+    },
+    {
+      "preset": "k4_v4",
+      "kv_len": 1024,
+      "memory": {
+        "dense_kv_bytes": 1048576,
+        "compressed_k_bytes": 131072,
+        "compressed_v_bytes": 131072,
+        "scales_bytes": 16384,
+        "zeros_bytes": 16384,
+        "norms_bytes": 4096,
+        "centroids_bytes": 124,
+        "rotation_bytes": 1024,
+        "metadata_bytes": 1116,
+        "recent_window_bytes": 0,
+        "boundary_bytes": 0,
+        "sparse_bytes": 0,
+        "outlier_bytes": 0,
+        "workspace_bytes": 0,
+        "peak_allocated_bytes": 0,
+        "formula_total_bytes": 0,
+        "compressed_total_bytes": 301272,
+        "measured_total_bytes": 301272,
+        "compression_ratio": 3.480496030165432,
+        "formula_compression_ratio": Infinity
+      },
+      "bytes_per_token": {
+        "dense": 1024.0,
+        "compressed": 294.2109375
+      },
+      "capacity_under_budget": {
+        "budget_bytes": 4294967296,
+        "dense_tokens": 4194304,
+        "compressed_tokens": 14598258,
+        "gain": 3.4804959297180176
+      },
+      "quality": {
+        "output_vs_dense": {
+          "max_abs": 0.8592721819877625,
+          "rmse": 0.10292817652225494,
+          "cosine": 0.7640873193740845
+        },
+        "attention_kl_vs_dense": 27.161083221435547,
+        "direct_label": "direct_qk"
+      },
+      "speed": {
+        "dense_sdpa_ms": {
+          "runs": 10,
+          "mean_ms": 0.13253760039806367,
+          "median_ms": 0.13035199791193008,
+          "variance_ms2": 3.0495158032442206e-05,
+          "min_ms": 0.1281919926404953,
+          "max_ms": 0.14336000382900238
+        },
+        "compressed_decode_ms": {
+          "runs": 10,
+          "mean_ms": 0.36372800171375275,
+          "median_ms": 0.3630080074071884,
+          "variance_ms2": 2.301457351455088e-05,
+          "min_ms": 0.3582080006599426,
+          "max_ms": 0.3720319867134094
+        },
+        "speed_ratio_vs_dense_sdpa": 0.3590884918571876,
+        "kernel": {
+          "name": "fused_decode_k4v4",
+          "k_format": "K4",
+          "v_format": "V4",
+          "q_len": 1,
+          "kv_len": 1024,
+          "num_q_heads": 16,
+          "num_kv_heads": 2,
+          "head_dim": 128,
+          "counters": {
+            "score_calls": 0,
+            "v_accumulation_calls": 0,
+            "fused_calls": 13,
+            "fallback_calls": 0
+          }
+        },
+        "kernel_vs_direct": {
+          "max_abs": 3.9696693420410156e-05,
+          "rmse": 3.571330125851091e-06,
+          "cosine": 0.9999999403953552
+        }
+      }
+    }
+  ]
+}
