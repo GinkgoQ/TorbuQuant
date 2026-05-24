@@ -7,11 +7,11 @@ from typing import Any
 
 import torch
 
-from torbuquant.core.types import MSEData, ValueData
-from torbuquant.integration.common import KVQuantConfig, detect_backend, integration_report, policy_from_config
-from torbuquant.integration.vllm.cache_spec import PagedCacheSpec
-from torbuquant.kv import CompressedKVBlock, CompressedKVCache, DenseKeyData, QuantizedKeyData, TurboKeyData
-from torbuquant.triton import KernelCounters, KernelResult, decode_block
+from turboquant.core.types import MSEData, ValueData
+from turboquant.integration.common import KVQuantConfig, detect_backend, integration_report, policy_from_config
+from turboquant.integration.vllm.cache_spec import PagedCacheSpec
+from turboquant.kv import CompressedKVBlock, CompressedKVCache, DenseKeyData, QuantizedKeyData, TurboKeyData
+from turboquant.triton import KernelCounters, KernelResult, decode_block
 
 
 @dataclass(frozen=True)

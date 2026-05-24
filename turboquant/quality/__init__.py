@@ -1,6 +1,6 @@
 """Quality metrics and retrieval helpers."""
 
-from torbuquant.quality.composite import (
+from turboquant.quality.composite import (
     QualityScore,
     compose_quality_score,
     quality_diagnosis,
@@ -8,7 +8,7 @@ from torbuquant.quality.composite import (
     quality_report_dict,
     quality_report_text,
 )
-from torbuquant.quality.metrics import (
+from turboquant.quality.metrics import (
     LogitMetrics,
     TensorError,
     TimingStats,
@@ -19,7 +19,7 @@ from torbuquant.quality.metrics import (
     tensor_error,
     timing_stats,
 )
-from torbuquant.quality.kld import (
+from turboquant.quality.kld import (
     KLDResult,
     KLDTracker,
     kld_to_score,
@@ -29,7 +29,7 @@ from torbuquant.quality.kld import (
     compute_self_reference_kld,
     compute_rms_delta_probability,
 )
-from torbuquant.quality.hw_replay import (
+from turboquant.quality.hw_replay import (
     GPUInfo,
     SystemInfo,
     BenchResult,
@@ -42,7 +42,7 @@ from torbuquant.quality.hw_replay import (
     compare_profiles,
     predict_decode_from_baseline,
 )
-from torbuquant.quality.prompts import (
+from turboquant.quality.prompts import (
     PromptCase,
     filter_prompt_cases,
     group_prompt_cases,
@@ -51,7 +51,7 @@ from torbuquant.quality.prompts import (
     prompt_ids,
     prompt_texts,
 )
-from torbuquant.quality.retrieval import (
+from turboquant.quality.retrieval import (
     DISTRACTOR_KEYS,
     FILLER_PARAGRAPHS,
     NeedleCase,
@@ -81,7 +81,7 @@ from torbuquant.quality.retrieval import (
     score_multi_numbers,
     score_single_number,
 )
-from torbuquant.quality.trajectory import (
+from turboquant.quality.trajectory import (
     PerturbationMetrics,
     PerturbationRecord,
     SequenceMatch,

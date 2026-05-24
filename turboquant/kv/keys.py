@@ -6,9 +6,9 @@ from typing import NamedTuple
 
 import torch
 
-from torbuquant.core import RotationMode, TorbuquantMSE, build_rotation, derive_transform_seed
-from torbuquant.core.types import MSEData, ValueData
-from torbuquant.kv.values import dequantize_values, quantize_values, value_data_nbytes
+from turboquant.core import RotationMode, TorbuquantMSE, build_rotation, derive_transform_seed
+from turboquant.core.types import MSEData, ValueData
+from turboquant.kv.values import dequantize_values, quantize_values, value_data_nbytes
 
 
 class DenseKeyData(NamedTuple):

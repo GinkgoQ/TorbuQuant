@@ -7,8 +7,8 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.common import KVQuantConfig, ProductionModeError, detect_backend, integration_report, policy_from_config
-from torbuquant.kv import CompressedKVCache
+from turboquant.integration.common import KVQuantConfig, ProductionModeError, detect_backend, integration_report, policy_from_config
+from turboquant.kv import CompressedKVCache
 
 
 @dataclass

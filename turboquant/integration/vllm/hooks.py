@@ -24,7 +24,7 @@ from typing import Optional, Dict
 import torch
 import torch.nn.functional as F
 
-logger = logging.getLogger("torbuquant.integration.vllm.hooks")
+logger = logging.getLogger("turboquant.integration.vllm.hooks")
 
 MODE_OFF = "off"
 MODE_CAPTURE_ONLY = "capture_only"
@@ -84,8 +84,8 @@ class LayerState:
 
 def _create_layer_state(cfg: LayerConfig) -> LayerState:
     """Create layer state with store and capture engine."""
-    from torbuquant.kv.store import CompressedKVStore
-    from torbuquant.kv.capture import KVCaptureEngine
+    from turboquant.kv.store import CompressedKVStore
+    from turboquant.kv.capture import KVCaptureEngine
 
     store = CompressedKVStore(
         head_dim=cfg.head_dim,
@@ -184,7 +184,7 @@ def _no_alloc_prefill_attention(
 def _make_patched_forward(orig_fn, state: LayerState, no_alloc: bool = False,
                           capture_in_forward: bool = False):
     """Intercept forward to optionally use TQ decode."""
-    from torbuquant.attention.hybrid import compute_hybrid_attention
+    from turboquant.attention.hybrid import compute_hybrid_attention
 
     def _capture_kv(key, value, attn_metadata):
         """Capture K/V tensors into TQ store."""

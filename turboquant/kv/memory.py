@@ -7,7 +7,7 @@ from typing import Mapping
 
 import torch
 
-from torbuquant.packing.bits import tensor_nbytes
+from turboquant.packing.bits import tensor_nbytes
 
 
 @dataclass(frozen=True)

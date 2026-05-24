@@ -6,8 +6,8 @@ import math
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from torbuquant.kv.formats import get_k_format, get_v_format
-from torbuquant.packing.bits import packed_length
+from turboquant.kv.formats import get_k_format, get_v_format
+from turboquant.packing.bits import packed_length
 
 
 @dataclass(frozen=True)

@@ -9,11 +9,11 @@ from typing import Any, Literal
 import torch
 import torch.nn.functional as F
 
-from torbuquant.core.rotation import rotate_forward
-from torbuquant.core.types import MSEData
-from torbuquant.kv.cache import CompressedKVBlock, CompressedKVCache
-from torbuquant.kv.keys import DenseKeyData, QuantizedKeyData, TurboKeyData, build_k4_quantizer, dequantize_k8
-from torbuquant.kv.values import dequantize_values
+from turboquant.core.rotation import rotate_forward
+from turboquant.core.types import MSEData
+from turboquant.kv.cache import CompressedKVBlock, CompressedKVCache
+from turboquant.kv.keys import DenseKeyData, QuantizedKeyData, TurboKeyData, build_k4_quantizer, dequantize_k8
+from turboquant.kv.values import dequantize_values
 
 AttentionLabel = Literal[
     "dense_baseline",

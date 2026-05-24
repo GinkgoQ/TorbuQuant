@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
-from torbuquant.packing.bits import packed_length
+from turboquant.packing.bits import packed_length
 
 KFormatName = Literal["K16", "K8", "K4", "K3", "K2"]
 VFormatName = Literal["V8", "V4", "V3", "V2"]

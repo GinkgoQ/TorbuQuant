@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import torch
 
-from torbuquant.core.rotation import RotationState, rotate_forward
-from torbuquant.packing.bits import pack_unsigned, packed_length
+from turboquant.core.rotation import RotationState, rotate_forward
+from turboquant.packing.bits import pack_unsigned, packed_length
 
 
 def pack_tq_rows(

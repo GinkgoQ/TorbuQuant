@@ -14,7 +14,7 @@ import torch
 from typing import Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from torbuquant.kv.store import CompressedKVStore
+    from turboquant.kv.store import CompressedKVStore
 
 
 class RingBuffer:

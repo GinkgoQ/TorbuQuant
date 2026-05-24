@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any, Literal
 
-from torbuquant.integration.common.backend import BackendName, detect_backend
-from torbuquant.kv.policy import KVQuantPolicy, PresetName, qwen25_3b_policy
+from turboquant.integration.common.backend import BackendName, detect_backend
+from turboquant.kv.policy import KVQuantPolicy, PresetName, qwen25_3b_policy
 
 ModeName = Literal["diagnostic", "production"]
 

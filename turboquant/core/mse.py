@@ -6,10 +6,10 @@ from typing import Tuple
 
 import torch
 
-from torbuquant.core.types import MSEData
-from torbuquant.core.rotation import RotationState, rotate_forward, rotate_backward
-from torbuquant.core.codebook import get_codebook_tensors
-from torbuquant.packing.bits import pack_unsigned, unpack_unsigned
+from turboquant.core.types import MSEData
+from turboquant.core.rotation import RotationState, rotate_forward, rotate_backward
+from turboquant.core.codebook import get_codebook_tensors
+from turboquant.packing.bits import pack_unsigned, unpack_unsigned
 
 
 # Bit packing.

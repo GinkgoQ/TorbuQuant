@@ -1,16 +1,16 @@
 """Core quantization math for TorbuQuant."""
 
-from torbuquant.core.codebook import (
+from turboquant.core.codebook import (
     beta_pdf,
     compute_lloyd_max,
     get_codebook,
     get_codebook_tensors,
 )
-from torbuquant.core.mse import TorbuquantMSE, pack_indices, unpack_indices
-from torbuquant.core.polar import TorbuquantProd
-from torbuquant.core.outlier import TorbuquantChannelMSE
-from torbuquant.core.qjl import TorbuquantQJL, pack_signs, unpack_signs
-from torbuquant.core.rotation import (
+from turboquant.core.mse import TorbuquantMSE, pack_indices, unpack_indices
+from turboquant.core.polar import TorbuquantProd
+from turboquant.core.outlier import TorbuquantChannelMSE
+from turboquant.core.qjl import TorbuquantQJL, pack_signs, unpack_signs
+from turboquant.core.rotation import (
     RotationMode,
     RotationState,
     build_qjl_matrix,
@@ -20,7 +20,7 @@ from torbuquant.core.rotation import (
     rotate_backward,
     rotate_forward,
 )
-from torbuquant.core.types import (
+from turboquant.core.types import (
     CodebookSpec,
     ChannelSplitData,
     MSEData,

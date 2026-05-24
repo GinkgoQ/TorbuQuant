@@ -1,6 +1,6 @@
 """Triton kernel entry points."""
 
-from torbuquant.triton.kernels import (
+from turboquant.triton.kernels import (
     KernelCounters,
     KernelName,
     KernelReport,
@@ -14,13 +14,13 @@ from torbuquant.triton.kernels import (
     triton_available,
     weighted_v4,
 )
-from torbuquant.triton.tq4_decode import decode_tq4_paged, unpack_tq_rows
-from torbuquant.triton.tq4_update import pack_tq_rows, tq_row_bytes, write_tq4_kv
+from turboquant.triton.tq4_decode import decode_tq4_paged, unpack_tq_rows
+from turboquant.triton.tq4_update import pack_tq_rows, tq_row_bytes, write_tq4_kv
 
 # Advanced fused attention kernels (Phase 3)
 try:
-    from torbuquant.triton.flash_attention_tq4_kv import triton_flash_attention_tq4_kv
-    from torbuquant.triton.fused_paged_tq4_attention import fused_paged_tq4_decode
+    from turboquant.triton.flash_attention_tq4_kv import triton_flash_attention_tq4_kv
+    from turboquant.triton.fused_paged_tq4_attention import fused_paged_tq4_decode
     _FUSED_ATTENTION_AVAILABLE = True
 except ImportError:
     _FUSED_ATTENTION_AVAILABLE = False

@@ -7,7 +7,7 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.vllm.recipe import (
+from turboquant.integration.vllm.recipe import (
     TQ_BITS,
     TQ_NORM_BYTES,
     padded_slot_bytes,

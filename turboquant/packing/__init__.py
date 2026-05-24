@@ -1,6 +1,6 @@
 """Packing utilities for TorbuQuant."""
 
-from torbuquant.packing.bits import (
+from turboquant.packing.bits import (
     pack_k4,
     pack_k3,
     pack_k2,

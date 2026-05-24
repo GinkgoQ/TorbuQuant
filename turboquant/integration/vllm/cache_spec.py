@@ -5,9 +5,9 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from torbuquant.kv.formats import get_k_format, get_v_format
-from torbuquant.packing.bits import packed_length
-from torbuquant.integration.vllm.recipe import is_turboquant_dtype, packed_dim, recipe_layout
+from turboquant.kv.formats import get_k_format, get_v_format
+from turboquant.packing.bits import packed_length
+from turboquant.integration.vllm.recipe import is_turboquant_dtype, packed_dim, recipe_layout
 
 
 @dataclass(frozen=True)

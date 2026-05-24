@@ -1,5 +1,5 @@
 """
-torbuquant.core.codebook
+turboquant.core.codebook
 ========================
 Lloyd-Max codebook computation for the exact Beta distribution arising from
 random rotation of unit-norm vectors.

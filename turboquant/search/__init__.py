@@ -5,7 +5,7 @@ Supports approximate nearest-neighbor search over compressed embedding corpora.
 
 Example:
     ```python
-    from torbuquant.search import compress_vectors, search, CompressedCorpus
+    from turboquant.search import compress_vectors, search, CompressedCorpus
 
     # Compress embeddings
     corpus = compress_vectors(embeddings, bits=3.5, m=64)
@@ -15,7 +15,7 @@ Example:
     ```
 """
 
-from torbuquant.search.functional import (
+from turboquant.search.functional import (
     CompressedCorpus,
     compress_vectors,
     search,

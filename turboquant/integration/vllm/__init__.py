@@ -1,7 +1,7 @@
 """vLLM integration package."""
 
-from torbuquant.integration.vllm.backend import build_paged_cache, require_vllm
-from torbuquant.integration.vllm.hooks import (
+from turboquant.integration.vllm.backend import build_paged_cache, require_vllm
+from turboquant.integration.vllm.hooks import (
     MODE_CAPTURE_ONLY,
     MODE_FULL_TQ,
     MODE_HYBRID,
@@ -14,9 +14,9 @@ from torbuquant.integration.vllm.hooks import (
     install_hooks,
     set_mode,
 )
-from torbuquant.integration.vllm.cache_spec import PagedCacheSpec, SlotComponentBytes
-from torbuquant.integration.vllm.config import VLLMSettings, vllm_settings
-from torbuquant.integration.vllm.metadata import (
+from turboquant.integration.vllm.cache_spec import PagedCacheSpec, SlotComponentBytes
+from turboquant.integration.vllm.config import VLLMSettings, vllm_settings
+from turboquant.integration.vllm.metadata import (
     CacheMetadata,
     CalibrationMetadata,
     LayerMetadata,
@@ -27,13 +27,13 @@ from torbuquant.integration.vllm.metadata import (
     save_metadata,
     slice_layer_metadata_for_tp,
 )
-from torbuquant.integration.vllm.page_cache import (
+from turboquant.integration.vllm.page_cache import (
     PackedPageCache,
     PageGeometry,
     make_empty_rows,
     split_tq_row,
 )
-from torbuquant.integration.vllm.registry import (
+from turboquant.integration.vllm.registry import (
     CacheDTypeInfo,
     cache_dtype_info,
     is_recipe_dtype,
@@ -42,9 +42,9 @@ from torbuquant.integration.vllm.registry import (
     resolve_metadata,
     validate_runtime_gate,
 )
-from torbuquant.integration.vllm.report import CacheByteReport, RuntimeReport
-from torbuquant.integration.vllm.ops import PagedCompressedKVCache, PagedSlot, merge_blocks
-from torbuquant.integration.vllm.recipe import (
+from turboquant.integration.vllm.report import CacheByteReport, RuntimeReport
+from turboquant.integration.vllm.ops import PagedCompressedKVCache, PagedSlot, merge_blocks
+from turboquant.integration.vllm.recipe import (
     RecipeGroupLayout,
     RecipeKernelMeta,
     RecipeLayout,
@@ -70,7 +70,7 @@ from torbuquant.integration.vllm.recipe import (
     tq_bytes_per_token_kv,
     tq_index_bytes,
 )
-from torbuquant.integration.vllm.runtime import (
+from turboquant.integration.vllm.runtime import (
     VLLMLayerContext,
     VLLMRuntimeConfig,
     build_layer_context,
@@ -81,7 +81,7 @@ from torbuquant.integration.vllm.runtime import (
     select_decode_path,
     select_prefill_path,
 )
-from torbuquant.integration.vllm.verify import (
+from turboquant.integration.vllm.verify import (
     ModelCacheShape,
     detect_model_cache_shape,
     detect_text_config,
@@ -91,7 +91,7 @@ from torbuquant.integration.vllm.verify import (
     verify_metadata_only,
     version_report,
 )
-from torbuquant.integration.vllm.vector import (
+from turboquant.integration.vllm.vector import (
     RecipeTables,
     apply_block_hadamard,
     build_query_groups,

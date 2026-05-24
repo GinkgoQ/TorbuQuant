@@ -23,7 +23,7 @@ from typing import Optional, Tuple
 import torch
 import torch.nn.functional as F
 
-from torbuquant.core import get_codebook_tensors, build_rotation
+from turboquant.core import get_codebook_tensors, build_rotation
 
 
 @dataclass

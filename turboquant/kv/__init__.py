@@ -1,6 +1,6 @@
 """KV cache data structures and accounting."""
 
-from torbuquant.kv.cache import (
+from turboquant.kv.cache import (
     BoundaryPolicy,
     CompressedKVBlock,
     CompressedKVCache,
@@ -9,11 +9,11 @@ from torbuquant.kv.cache import (
     ProductionKVHandle,
     SparseOutlierStore,
 )
-from torbuquant.kv.capture import (
+from turboquant.kv.capture import (
     KVCaptureEngine,
     RingBuffer,
 )
-from torbuquant.kv.compressors import (
+from turboquant.kv.compressors import (
     CompressedKeys,
     CompressedValues,
     MSECompressor,
@@ -21,7 +21,7 @@ from torbuquant.kv.compressors import (
     TurboQuantCompressorV2,
     TurboQuantV3,
 )
-from torbuquant.kv.formats import (
+from turboquant.kv.formats import (
     K_FORMATS,
     V_FORMATS,
     KVFormatSpec,
@@ -30,7 +30,7 @@ from torbuquant.kv.formats import (
     validate_k_format,
     validate_v_format,
 )
-from torbuquant.kv.keys import (
+from turboquant.kv.keys import (
     DenseKeyData,
     KeyPayload,
     QuantizedKeyData,
@@ -40,14 +40,14 @@ from torbuquant.kv.keys import (
     key_payload_nbytes,
     quantize_k8,
 )
-from torbuquant.kv.layout import CacheGeometry, PackedKVLayout, estimate_persistent_bytes
-from torbuquant.kv.memory import (
+from turboquant.kv.layout import CacheGeometry, PackedKVLayout, estimate_persistent_bytes
+from turboquant.kv.memory import (
     ByteLedger,
     MemoryReport,
     bytes_from_tensors,
     report_from_components,
 )
-from torbuquant.kv.policy import (
+from turboquant.kv.policy import (
     AutoPolicyDecision,
     AutoPolicyInput,
     BackendCapability,
@@ -57,8 +57,8 @@ from torbuquant.kv.policy import (
     estimate_policy_kv_bytes,
     qwen25_3b_policy,
 )
-from torbuquant.kv.recent import RecentWindow
-from torbuquant.kv.store import (
+from turboquant.kv.recent import RecentWindow
+from turboquant.kv.store import (
     CompressedKVStore,
     FlatCache,
     TurboQuantKVCache,
@@ -67,7 +67,7 @@ from torbuquant.kv.store import (
     quantize_value_chunk,
     unpack_value_data,
 )
-from torbuquant.kv.values import (
+from turboquant.kv.values import (
     dequantize_values,
     padded_dim,
     quantize_values,

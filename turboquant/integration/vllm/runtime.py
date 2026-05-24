@@ -7,10 +7,10 @@ from typing import Literal
 
 import torch
 
-from torbuquant.integration.vllm.metadata import CacheMetadata
-from torbuquant.integration.vllm.page_cache import PageGeometry
-from torbuquant.integration.vllm.registry import cache_dtype_info, resolve_metadata
-from torbuquant.integration.vllm.recipe import env_flag, parse_tq_bits_env, recipe_packed_dim
+from turboquant.integration.vllm.metadata import CacheMetadata
+from turboquant.integration.vllm.page_cache import PageGeometry
+from turboquant.integration.vllm.registry import cache_dtype_info, resolve_metadata
+from turboquant.integration.vllm.recipe import env_flag, parse_tq_bits_env, recipe_packed_dim
 
 
 DecodePath = Literal["delegate", "tq4_paged", "recipe_paged"]

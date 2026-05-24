@@ -10,7 +10,7 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.vllm.recipe import canonical_recipe, outlier_count
+from turboquant.integration.vllm.recipe import canonical_recipe, outlier_count
 
 
 METADATA_VERSION = 1

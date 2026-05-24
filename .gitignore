@@ -77,7 +77,7 @@ secrets.toml
 other_implemnetations/
 
 # Project-specific generated/cache directories
-torbuquant.egg-info/
+turboquant.egg-info/
 
 # Local tool caches
 .agents/

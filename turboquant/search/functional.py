@@ -12,9 +12,9 @@ from typing import Tuple, Optional
 import torch
 import torch.nn.functional as F
 
-from torbuquant.core.mse import TorbuquantMSE
-from torbuquant.core.polar import TorbuquantProd
-from torbuquant.core.types import MSEData, ProdData
+from turboquant.core.mse import TorbuquantMSE
+from turboquant.core.polar import TorbuquantProd
+from turboquant.core.types import MSEData, ProdData
 
 
 @dataclass

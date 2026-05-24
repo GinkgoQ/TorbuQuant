@@ -1,6 +1,6 @@
 """Benchmark profile helpers."""
 
-from torbuquant.bench.external import (
+from turboquant.bench.external import (
     CommandSpec,
     KVSpec,
     assert_corpus_identity,
@@ -19,7 +19,7 @@ from torbuquant.bench.external import (
     vllm_kv_dtype,
     write_corpus_sidecar,
 )
-from torbuquant.bench.profile import (
+from turboquant.bench.profile import (
     DeviceProfile,
     ModelProfile,
     RunPoint,

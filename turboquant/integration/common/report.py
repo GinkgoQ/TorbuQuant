@@ -5,8 +5,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from torbuquant.integration.common.backend import IntegrationCapability
-from torbuquant.integration.common.config import KVQuantConfig
+from turboquant.integration.common.backend import IntegrationCapability
+from turboquant.integration.common.config import KVQuantConfig
 
 
 @dataclass(frozen=True)

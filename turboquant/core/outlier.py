@@ -6,9 +6,9 @@ import math
 
 import torch
 
-from torbuquant.core.mse import TorbuquantMSE
-from torbuquant.core.rotation import RotationMode, build_rotation, derive_transform_seed
-from torbuquant.core.types import ChannelSplitData, MSEData
+from turboquant.core.mse import TorbuquantMSE
+from turboquant.core.rotation import RotationMode, build_rotation, derive_transform_seed
+from turboquant.core.types import ChannelSplitData, MSEData
 
 
 def split_channel_indices(

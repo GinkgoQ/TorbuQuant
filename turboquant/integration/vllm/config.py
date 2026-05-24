@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from torbuquant.integration.common import KVQuantConfig, ProductionModeError, detect_backend, policy_from_config
+from turboquant.integration.common import KVQuantConfig, ProductionModeError, detect_backend, policy_from_config
 
 
 @dataclass(frozen=True)

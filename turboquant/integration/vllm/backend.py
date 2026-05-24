@@ -4,10 +4,10 @@ from __future__ import annotations
 
 import torch
 
-from torbuquant.integration.common import KVQuantConfig, OptionalDependencyError
-from torbuquant.integration.vllm.cache_spec import PagedCacheSpec
-from torbuquant.integration.vllm.config import vllm_settings
-from torbuquant.integration.vllm.ops import PagedCompressedKVCache
+from turboquant.integration.common import KVQuantConfig, OptionalDependencyError
+from turboquant.integration.vllm.cache_spec import PagedCacheSpec
+from turboquant.integration.vllm.config import vllm_settings
+from turboquant.integration.vllm.ops import PagedCompressedKVCache
 
 
 def require_vllm() -> object:

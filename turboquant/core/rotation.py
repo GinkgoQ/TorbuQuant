@@ -10,7 +10,7 @@ from typing import Optional
 import torch
 import torch.nn.functional as F
 
-from torbuquant.core.types import TransformSpec
+from turboquant.core.types import TransformSpec
 
 
 # Enums and state.

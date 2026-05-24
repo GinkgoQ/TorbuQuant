@@ -14,9 +14,9 @@ except Exception:  # pragma: no cover - import state depends on environment
     triton = None
     tl = None
 
-from torbuquant.core.rotation import rotate_forward
-from torbuquant.kv.cache import CompressedKVBlock
-from torbuquant.kv.keys import DenseKeyData, QuantizedKeyData, TurboKeyData
+from turboquant.core.rotation import rotate_forward
+from turboquant.kv.cache import CompressedKVBlock
+from turboquant.kv.keys import DenseKeyData, QuantizedKeyData, TurboKeyData
 
 
 KernelName = Literal[

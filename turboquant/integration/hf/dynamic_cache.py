@@ -8,9 +8,9 @@ from typing import Any
 
 import torch
 
-from torbuquant.core.mse import TorbuquantMSE
-from torbuquant.core.rotation import RotationMode, build_rotation
-from torbuquant.core.types import MSEData
+from turboquant.core.mse import TorbuquantMSE
+from turboquant.core.rotation import RotationMode, build_rotation
+from turboquant.core.types import MSEData
 
 
 def _bits_to_mode(bits: int) -> int:

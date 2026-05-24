@@ -8,7 +8,7 @@ This module provides int4 weight quantization with:
 
 Example:
     ```python
-    from torbuquant.weights import QuantizedLinear, QuantConfig
+    from turboquant.weights import QuantizedLinear, QuantConfig
 
     # Quantize an existing linear layer
     config = QuantConfig(group_size=128, outlier_keep_ratio=0.02)
@@ -19,8 +19,8 @@ Example:
     ```
 """
 
-from torbuquant.weights.config import QuantConfig
-from torbuquant.weights.core import (
+from turboquant.weights.config import QuantConfig
+from turboquant.weights.core import (
     CompressedWeights,
     compute_channel_importance,
     identify_outliers,
@@ -34,7 +34,7 @@ from torbuquant.weights.core import (
     turboquant_decompress,
     compute_metrics,
 )
-from torbuquant.weights.linear import (
+from turboquant.weights.linear import (
     QuantizedLinear,
     TurboQuantLinear,
 )

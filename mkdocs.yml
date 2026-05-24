@@ -1,13 +1,14 @@
 site_name: turboquant
 site_description: LLM KV cache compression and vector quantization
-repo_url: https://github.com/GinkgoQ/turboquant
-repo_name: turboquant
+site_url: https://ginkgoq.github.io/TurboQuant/
+repo_url: https://github.com/GinkgoQ/TurboQuant
+repo_name: GinkgoQ/TurboQuant
 docs_dir: docs
 
 theme:
   name: material
   language: en
-  logo: assets/images/favicon.svg
+  logo: assets/images/turboquant-mark.svg
   favicon: assets/images/turboquant-mark.svg
   palette:
     - scheme: default

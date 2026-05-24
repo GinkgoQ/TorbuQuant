@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from typing import Any, Literal
 
-from torbuquant.packing.bits import packed_length
+from turboquant.packing.bits import packed_length
 
 
 RecipeName = Literal["turboquant25", "turboquant35"]

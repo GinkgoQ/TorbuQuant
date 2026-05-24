@@ -17,8 +17,8 @@ import torch
 import torch.nn.functional as F
 
 if TYPE_CHECKING:
-    from torbuquant.core.types import ProdData, ValueData
-    from torbuquant.core.polar import TorbuquantProd
+    from turboquant.core.types import ProdData, ValueData
+    from turboquant.core.polar import TorbuquantProd
 
 MIN_HISTORY_FOR_TQ = 16
 
@@ -114,7 +114,7 @@ def _attend_compressed_only(
     return_scores: bool,
 ) -> HybridAttentionResult:
     """Attention over compressed history only."""
-    from torbuquant.kv.values import dequantize_values as dequant_v
+    from turboquant.kv.values import dequantize_values as dequant_v
 
     k_dequant = quantizer.dequantize(compressed_keys)
     v_dequant = dequant_v(compressed_values)
@@ -157,7 +157,7 @@ def _attend_hybrid(
     return_scores: bool,
 ) -> HybridAttentionResult:
     """Merge compressed history + exact recent via concatenated attention."""
-    from torbuquant.kv.values import dequantize_values as dequant_v
+    from turboquant.kv.values import dequantize_values as dequant_v
 
     k_hist = quantizer.dequantize(compressed_keys)  # (H_kv, N_hist, D)
     v_hist = dequant_v(compressed_values)

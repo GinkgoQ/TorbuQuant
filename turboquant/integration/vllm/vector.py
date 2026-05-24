@@ -8,15 +8,15 @@ from functools import lru_cache
 
 import torch
 
-from torbuquant.core.codebook import get_codebook_tensors
-from torbuquant.integration.vllm.recipe import (
+from turboquant.core.codebook import get_codebook_tensors
+from turboquant.integration.vllm.recipe import (
     QJL_SCALE,
     QJL_SEED_OFFSET,
     SEED,
     RecipeLayout,
     recipe_layout,
 )
-from torbuquant.packing.bits import pack_unsigned, unpack_unsigned
+from turboquant.packing.bits import pack_unsigned, unpack_unsigned
 
 
 @dataclass(frozen=True)

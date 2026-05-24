@@ -4,15 +4,15 @@ from __future__ import annotations
 
 import torch
 
-from torbuquant.core.types import MSEData, ProdData
-from torbuquant.core.mse import TorbuquantMSE
-from torbuquant.core.qjl import TorbuquantQJL
-from torbuquant.core.rotation import (
+from turboquant.core.types import MSEData, ProdData
+from turboquant.core.mse import TorbuquantMSE
+from turboquant.core.qjl import TorbuquantQJL
+from turboquant.core.rotation import (
     RotationState, RotationMode,
     build_rotation, build_qjl_matrix,
     rotate_forward,
 )
-from torbuquant.core.codebook import get_codebook_tensors
+from turboquant.core.codebook import get_codebook_tensors
 
 
 class TorbuquantProd(torch.nn.Module):
@@ -114,7 +114,7 @@ class TorbuquantProd(torch.nn.Module):
 
         q_rot = rotate_forward(query, self.mse.rotation)
 
-        from torbuquant.core.mse import unpack_indices
+        from turboquant.core.mse import unpack_indices
         mse_idx = unpack_indices(q.mse_indices, q.mse_bits, d)
 
         centroids = self.mse.centroids

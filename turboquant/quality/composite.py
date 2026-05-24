@@ -6,7 +6,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from typing import Mapping
 
-from torbuquant.quality.trajectory import harmonic_mean, score_band
+from turboquant.quality.trajectory import harmonic_mean, score_band
 
 
 @dataclass(frozen=True)
@@ -94,7 +94,7 @@ def quality_report_dict(
     extras: Mapping[str, object] | None = None,
 ) -> dict[str, object]:
     report: dict[str, object] = {
-        "schema": "torbuquant.quality.v1",
+        "schema": "turboquant.quality.v1",
         "timestamp_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "model": model,
         "reference": reference_label,

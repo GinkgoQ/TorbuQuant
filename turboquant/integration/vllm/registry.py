@@ -7,8 +7,8 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.vllm.metadata import discover_metadata_path, load_metadata
-from torbuquant.integration.vllm.recipe import (
+from turboquant.integration.vllm.metadata import discover_metadata_path, load_metadata
+from turboquant.integration.vllm.recipe import (
     RecipeName,
     canonical_recipe,
     is_turboquant_dtype,

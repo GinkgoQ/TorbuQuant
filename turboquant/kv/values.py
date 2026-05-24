@@ -8,9 +8,9 @@ from typing import Literal
 import torch
 import torch.nn.functional as F
 
-from torbuquant.core.types import ValueData
-from torbuquant.kv.formats import validate_v_format
-from torbuquant.packing.bits import pack_unsigned, unpack_unsigned
+from turboquant.core.types import ValueData
+from turboquant.kv.formats import validate_v_format
+from turboquant.packing.bits import pack_unsigned, unpack_unsigned
 
 ScaleLayout = Literal["group", "token"]
 

@@ -7,9 +7,9 @@ from typing import Any, NamedTuple
 
 import torch
 
-from torbuquant.core import TorbuquantMSE
-from torbuquant.kv.formats import KVFormatSpec, validate_k_format, validate_v_format
-from torbuquant.kv.keys import (
+from turboquant.core import TorbuquantMSE
+from turboquant.kv.formats import KVFormatSpec, validate_k_format, validate_v_format
+from turboquant.kv.keys import (
     DenseKeyData,
     KeyPayload,
     QuantizedKeyData,
@@ -19,10 +19,10 @@ from torbuquant.kv.keys import (
     key_payload_nbytes,
     quantize_k8,
 )
-from torbuquant.kv.memory import MemoryReport
-from torbuquant.kv.policy import KVQuantPolicy
-from torbuquant.kv.recent import RecentWindow
-from torbuquant.kv.values import dequantize_values, quantize_values, value_data_nbytes
+from turboquant.kv.memory import MemoryReport
+from turboquant.kv.policy import KVQuantPolicy
+from turboquant.kv.recent import RecentWindow
+from turboquant.kv.values import dequantize_values, quantize_values, value_data_nbytes
 
 
 class DiagnosticDenseKV(NamedTuple):

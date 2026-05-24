@@ -11,9 +11,9 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.hf.dynamic_cache import CompressedDynamicCache
-from torbuquant.integration.vllm.metadata import load_metadata
-from torbuquant.integration.vllm.registry import is_recipe_dtype
+from turboquant.integration.hf.dynamic_cache import CompressedDynamicCache
+from turboquant.integration.vllm.metadata import load_metadata
+from turboquant.integration.vllm.registry import is_recipe_dtype
 
 
 MODEL_FAMILIES = {

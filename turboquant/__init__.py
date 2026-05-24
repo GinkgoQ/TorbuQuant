@@ -13,9 +13,9 @@ large language model inference. It provides:
 
 Example:
     ```python
-    from torbuquant.core import TorbuquantMSE, TorbuquantProd
-    from torbuquant.kv import CompressedKVCache
-    from torbuquant.attention import compute_hybrid_attention
+    from turboquant.core import TorbuquantMSE, TorbuquantProd
+    from turboquant.kv import CompressedKVCache
+    from turboquant.attention import compute_hybrid_attention
     ```
 """
 
@@ -37,9 +37,9 @@ __version__ = "0.1.0"
 # Lazy imports for optional submodules
 def __getattr__(name: str):
     if name == "weights":
-        from torbuquant import weights
+        from turboquant import weights
         return weights
     elif name == "search":
-        from torbuquant import search
+        from turboquant import search
         return search
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

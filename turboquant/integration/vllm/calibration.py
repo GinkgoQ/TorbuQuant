@@ -10,13 +10,13 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.vllm.metadata import (
+from turboquant.integration.vllm.metadata import (
     CacheMetadata,
     CalibrationMetadata,
     LayerMetadata,
     TensorMetadata,
 )
-from torbuquant.integration.vllm.recipe import canonical_recipe, outlier_count
+from turboquant.integration.vllm.recipe import canonical_recipe, outlier_count
 
 
 PROJECTION_PATTERN = re.compile(

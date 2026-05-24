@@ -1,5 +1,5 @@
 """
-torbuquant.core.qjl
+turboquant.core.qjl
 ===================
 Quantized Johnson-Lindenstrauss (QJL) transform, with 1-bit residual correction.
 

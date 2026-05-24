@@ -12,7 +12,7 @@ import torch
 from typing import Optional, NamedTuple
 from dataclasses import dataclass
 
-from torbuquant.kv.compressors import (
+from turboquant.kv.compressors import (
     TurboQuantCompressorV2,
     TurboQuantCompressorMSE,
     CompressedKeys,

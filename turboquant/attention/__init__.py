@@ -1,6 +1,6 @@
 """Attention reference paths and hybrid attention."""
 
-from torbuquant.attention.reference import (
+from turboquant.attention.reference import (
     AttentionLabel,
     AttentionReport,
     AttentionResult,
@@ -19,7 +19,7 @@ from torbuquant.attention.reference import (
     online_softmax,
     weighted_packed_v_accumulation,
 )
-from torbuquant.attention.hybrid import (
+from turboquant.attention.hybrid import (
     FlatCache,
     HybridAttentionResult,
     compute_hybrid_attention,

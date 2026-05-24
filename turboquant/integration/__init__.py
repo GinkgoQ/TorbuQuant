@@ -1,6 +1,6 @@
 """Runtime integration packages."""
 
-from torbuquant.integration.common import (
+from turboquant.integration.common import (
     IntegrationCapability,
     IntegrationError,
     IntegrationReport,

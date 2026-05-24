@@ -9,8 +9,8 @@ from typing import Any, Literal
 
 import torch
 
-from torbuquant.kv.policy import BackendCapability
-from torbuquant.triton import triton_available
+from turboquant.kv.policy import BackendCapability
+from turboquant.triton import triton_available
 
 BackendName = Literal["diagnostic", "hf", "vllm"]
 

@@ -33,8 +33,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e ".[docs]"
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Build docs
         run: mkdocs build --strict --site-dir site
+
+      - name: Disable Jekyll for Pages artifact
+        run: touch site/.nojekyll
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3

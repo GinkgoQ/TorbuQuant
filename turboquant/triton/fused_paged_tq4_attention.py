@@ -17,7 +17,7 @@ Autotune: 8 configs (BLOCK_N in {32, 64} x stages {2,3} x warps {4,8}).
 
 Examples:
     ```python
-    from torbuquant.triton.fused_paged_tq4_attention import (
+    from turboquant.triton.fused_paged_tq4_attention import (
         fused_paged_tq4_decode,
     )
 

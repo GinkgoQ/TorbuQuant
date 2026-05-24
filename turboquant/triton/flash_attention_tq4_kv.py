@@ -9,7 +9,7 @@ Autotune configs include BLOCK_M values 16, 32, 64, 128 to cover head_dim up to 
 
 Examples:
     ```python
-    from torbuquant.triton.flash_attention_tq4_kv import (
+    from turboquant.triton.flash_attention_tq4_kv import (
         triton_flash_attention_tq4_kv,
     )
 

@@ -6,8 +6,8 @@ import math
 
 import torch
 
-from torbuquant.core.rotation import RotationState, rotate_backward
-from torbuquant.packing.bits import packed_length, unpack_unsigned
+from turboquant.core.rotation import RotationState, rotate_backward
+from turboquant.packing.bits import packed_length, unpack_unsigned
 
 
 def unpack_tq_rows(

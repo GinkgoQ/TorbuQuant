@@ -18,7 +18,7 @@ PresetName = Literal[
     "recent_window",
     "sparse_v",
 ]
-AutoBackend = Literal["dense", "torbuquant"]
+AutoBackend = Literal["dense", "turboquant"]
 
 
 @dataclass(frozen=True)
@@ -178,7 +178,7 @@ def choose_auto_kv_policy(inputs: AutoPolicyInput) -> AutoPolicyDecision:
         last_bytes = cache_bytes
         if cache_bytes <= budget:
             return AutoPolicyDecision(
-                "torbuquant",
+                "turboquant",
                 policy,
                 dense,
                 cache_bytes,
@@ -188,7 +188,7 @@ def choose_auto_kv_policy(inputs: AutoPolicyInput) -> AutoPolicyDecision:
 
     assert last_policy is not None
     return AutoPolicyDecision(
-        "torbuquant",
+        "turboquant",
         last_policy,
         dense,
         last_bytes,

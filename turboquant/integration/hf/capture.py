@@ -7,7 +7,7 @@ from typing import Any
 
 import torch
 
-from torbuquant.integration.common import KVQuantConfig, OptionalDependencyError
+from turboquant.integration.common import KVQuantConfig, OptionalDependencyError
 
 
 @dataclass(frozen=True)
